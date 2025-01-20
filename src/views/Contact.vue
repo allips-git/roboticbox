@@ -19,21 +19,32 @@
                 </div>
             </div>
             <div class=" input-gap-box w-full max-w-[600px] flex  flex-col p-6 gap-4 rounded-md text-gray-900 bg-white">
-                <input type="text" placeholder="회사명 *" class="input-st">
-                <input type="text" placeholder="이름 *" class="input-st">
-                <input type="text" placeholder="직급 *" class="input-st">
-                <input type="text" placeholder="담당 연락처 *" class="input-st">
-                <input type="text" placeholder="담당 이메일 *" class="input-st">
-                <textarea type="text" placeholder="문의 내용 입력 *" class="resize-none input-st" rows="10"/>
+                <input type="text" id="company" v-model="contact['formData']['company']" placeholder="회사명 *" class="input-st">
+                <small v-if="contact['msg']['company'] !== ''" class="text-red-500">{{ contact['msg']['company'] }}</small>
+
+                <input type="text" id="name" v-model="contact['formData']['name']" placeholder="이름 *" class="input-st">
+                <small v-if="contact['msg']['name'] !== ''" class="text-red-500">{{ contact['msg']['name'] }}</small>
+
+                <input type="text" id="rank" v-model="contact['formData']['rank']" placeholder="직급 *" class="input-st">
+                <small v-if="contact['msg']['rank'] !== ''" class="text-red-500">{{ contact['msg']['rank'] }}</small>
+
+                <input type="text" id="tel" v-model="contact['formData']['tel']" placeholder="담당 연락처 *" class="input-st">
+                <small v-if="contact['msg']['tel'] !== ''" class="text-red-500">{{ contact['msg']['tel'] }}</small>
+
+                <input type="text" id="email" v-model="contact['formData']['email']" placeholder="담당 이메일 *" class="input-st">
+                <small v-if="contact['msg']['email'] !== ''" class="text-red-500">{{ contact['msg']['email'] }}</small>
+
+                <textarea type="text" id="message" v-model="contact['formData']['message']" placeholder="문의 내용 입력 *" class="resize-none input-st" rows="10"/>
+                <small v-if="contact['msg']['message'] !== ''" class="text-red-500">{{ contact['msg']['message'] }}</small>
                 <div class="flex items-start gap-3 text-sm">
-                    <Checkbox v-model="checked" />
+                    <Checkbox v-model="contact['checked']" :binary="true"/>
                     <p>개인정보 수집 및 이용에 동의합니다. <br>
                         <span class="text-gray-500">
                             처리 목적: 이름, 이메일, 연락처, 회사명, 직급 필수 항목: 문의 회신을 위한 기본 정보 수집
                         </span></p>
                 </div>
                 <div class="flex justify-end mt-2">
-                    <button class="px-4 py-2 text-white rounded-sm bg-blue-950 ">문의하기 ></button>
+                    <button class="px-4 py-2 text-white rounded-sm bg-blue-950 " @click="getContact">문의하기 ></button>
                 </div>
             </div>
         </div>
@@ -43,10 +54,49 @@
   </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { onMounted } from 'vue'
+import { useContactStore } from '@/stores/contact';
 import Checkbox from 'primevue/checkbox';
-const checked = ref(true); // 초기값을 false로 설정
+import { contactMsg } from '@/assets/js/msg';
 
+const contact = useContactStore();
+
+const getContact = async () => {
+    const checkParams = {
+        company     : contact['formData']['company'],
+        name        : contact['formData']['name'],
+        rank        : contact['formData']['rank'],
+        tel         : contact['formData']['tel'],
+        email       : contact['formData']['email'],
+        message     : contact['formData']['message']
+    };
+
+    const result = contactMsg(checkParams);
+
+    if(!result['state'])
+    {
+        contact.getMsgSet(result['msg'], result['id']);
+        const inputElement = document.getElementById(result['id']);
+        if (inputElement) 
+        {
+            inputElement.focus();
+        }
+
+        return false;
+    }
+
+    if(!contact['checked'])
+    {
+        alert('개인정보 수집 및 이용에 동의해주세요.');
+        return;
+    }
+
+    await contact.sendEmail();
+}
+
+onMounted(() => {
+    contact.getReset();
+});
 </script>
 
 <style lang="scss">
