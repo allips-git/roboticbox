@@ -34,6 +34,7 @@ interface State {
 
 export const useContactStore = defineStore('contact', {
     state: (): State => ({
+        state       : false,
         serviceId   : 'service_1k4x1s6',
         templateId  : 'template_gv2lgsd',
         checked     : false,
@@ -41,15 +42,19 @@ export const useContactStore = defineStore('contact', {
         msg         : getFormData()
     }),
     actions: {
-        sendEmail()
+        async sendEmail()
         {
-            emailjs.send(this.serviceId, this.templateId, this.formData, 'bWa0bfdRj9vzDYOzk').then(() => {
+            this.state = true;
+            
+            await emailjs.send(this.serviceId, this.templateId, this.formData, 'bWa0bfdRj9vzDYOzk').then(() => {
                 alert('문의하기가 완료되었습니다.');
                 this.getReset();
             }).catch((e) => {
                 console.log(e);
                 alert('문의하기에 실패하였습니다. 지속될 경우 관리자에게 문의하세요.');
             })
+
+            this.state = false;
         },
         getMsgSet(msg: string, name: string)
         {

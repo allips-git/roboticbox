@@ -44,7 +44,7 @@
                         </span></p>
                 </div>
                 <div class="flex justify-end mt-2">
-                    <button class="px-4 py-2 text-white rounded-sm bg-blue-950 " @click="getContact">문의하기 ></button>
+                    <button class="px-4 py-2 text-white rounded-sm bg-blue-950 " :disabled="contact['state']" @click="getContact">문의하기 ></button>
                 </div>
             </div>
         </div>
