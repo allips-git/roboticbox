@@ -11,7 +11,7 @@
       <h1 class="mb-8 text-4xl font-extrabold text-center">물류 사고 감소를 위한 AI 지게차 안전 관제 솔루션</h1>
       <p class="text-center">AI 지게차 안전 관제 솔루션은 지게차 및 작업자의 움직임을 관측할 수 있는 TopView 관제 시스템을 도입하여 영상 속 지게차와 작업자의 라벨링 및이동 동선 예측 모델링을 통하여 <br>
         객체 이동 동선의 사고를 예측하고, 태블릿을 통해 지게차 운전자에게 알람을 제공하여 사전에 지게차와 작업자간의 충돌을 예방하는 시스템입니다.</p>
-        <div class="flex items-center justify-center pt-14">
+        <div class="flex flex-col items-center justify-center gap-5 pt-14">
           <iframe
             :src="video"
             frameborder="0"
@@ -19,6 +19,10 @@
             class="aspect-video w-full max-w-[1200px]"
             >
           </iframe>
+          <a href="https://www.youtube.com/watch?v=dFcvxotdgFE" about="blank" class="text-sm text-center text-gray-500 hover:underline">
+
+출처 : [YTN 다큐S프라임] 인공지능 대전환! 제조혁신의 날개를 달다
+          </a>
         </div>
       </section>
       <section class="relative flex items-center justify-center h-full">
@@ -164,7 +168,7 @@
 
 
 <script lang="ts" setup>
-import video from '@/assets/img/robo_video.mp4';
+import video from '@/assets/img/robo_video_40.mp4';
 
 </script>
 
