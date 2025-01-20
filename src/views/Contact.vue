@@ -9,7 +9,7 @@
                 <h1 class="text-3xl">제조 및 로보틱스 분야의 미래를 여는 AI 솔루션,<br>
                     로보틱박스와 함께하세요.</h1>
                 <p class="my-10">언제든지 문의해주세요! <br> 궁금한 점이나 협업 제안이 있으시다면 편하게 연락 주세요.<br>로보틱박스가 혁신적인 솔루션으로 함께하겠습니다.</p>
-                <button class="border border-white rounded-sm  flex-none w-[200px] text-white py-3 flex items-center justify-center">회사소개서 다운로드<span class="ml-2">></span></button>
+                <button class="border border-white rounded-sm  flex-none w-[200px] text-white py-3 flex items-center justify-center" @click="getDownload">회사소개서 다운로드<span class="ml-2">></span></button>
                 <div class="w-px h-[calc(100%-430px)] bg-white my-8"></div>
                 <div class="flex flex-col gap-0.5">
                     <p>대표 : 하현수</p>
@@ -58,6 +58,7 @@ import { onMounted } from 'vue'
 import { useContactStore } from '@/stores/contact';
 import Checkbox from 'primevue/checkbox';
 import { contactMsg } from '@/assets/js/msg';
+import compressed from '@/assets/file/compressed.pdf'; // 파일 경로 가져오기
 
 const contact = useContactStore();
 
@@ -92,6 +93,13 @@ const getContact = async () => {
     }
 
     await contact.sendEmail();
+}
+
+const getDownload = () => {
+    const link      = document.createElement('a');
+    link.href       = compressed;
+    link.download   = 'compressed.pdf';
+    link.click();
 }
 
 onMounted(() => {
