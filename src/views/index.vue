@@ -141,29 +141,35 @@ import { Navigation } from 'swiper/modules';
 const swiperRef = ref(null); // Swiper 참조
 const modules = [Navigation]; // 사용할 모듈 배열에 추가
 
+import indexList01 from '@/assets/img/index_list_01.png';
+import indexList02 from '@/assets/img/index_list_02.png';
+import indexList03 from '@/assets/img/index_list_03.png';
+import indexList04 from '@/assets/img/index_list_04.png';
+import indexList05 from '@/assets/img/index_list_05.png';
+
 const items = ref([
   {
-    image: '/src/assets/img/index_list_01.png',
+    image: indexList01,
     title: '이륜차 빅데이터 기반<br>교통 안전 시스템',
     description: '이륜차의 교통 데이터를 분석하여 <br>사고를 예방하고 운전자의 안전을 향상시키는 기술',
   },
   {
-    image: '/src/assets/img/index_list_02.png', // 적절한 이미지 경로로 수정하세요
+    image: indexList02,
     title: '빅데이터 활용<br>강재특성 도출 시스템',
     description: '대량의 데이터를 분석하여<br>강재의 물리적, 화학적 특성을 정확하게 예측하고 도출하는 기술',
   },
   {
-    image: '/src/assets/img/index_list_03.png', // 적절한 이미지 경로로 수정하세요
+    image: indexList03,
     title: '맞춤제조 AI<br>빅데이터 시스템',
     description: '생산 요구에 맞춰 원자재 데이터를<br>분석하고 예측하여 최적의 원자재 공급을 자동화하는 기술',
   },
   {
-    image: '/src/assets/img/index_list_04.png', // 적절한 이미지 경로로 수정하세요
+    image: indexList04,
     title: '압출 생산자동화<br>AI 예측 시스템',
     description: '생산 과정에서 데이터를 분석하여<br>효율적인 작업을 예측하고 자동화하는 기술',
   },
   {
-    image: '/src/assets/img/index_list_05.png', // 적절한 이미지 경로로 수정하세요
+    image: indexList05,
     title: '압연공정 이상 예지 <br> AI 예측 시스템',
     description: '압연 과정에서 발생할 수 있는 이상 상황을 데이터를 분석하여<br>미리 예측하고 대응하는 기술',
   },

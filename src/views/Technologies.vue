@@ -13,7 +13,7 @@
         객체 이동 동선의 사고를 예측하고, 태블릿을 통해 지게차 운전자에게 알람을 제공하여 사전에 지게차와 작업자간의 충돌을 예방하는 시스템입니다.</p>
         <div class="flex items-center justify-center pt-14">
           <iframe
-            src="/src/assets/img/robo_video.mp4"
+            :src="video"
             frameborder="0"
             allowfullscreen
             class="aspect-video w-full max-w-[1200px]"
@@ -164,6 +164,7 @@
 
 
 <script lang="ts" setup>
+import video from '@/assets/img/robo_video.mp4';
 
 </script>
 
