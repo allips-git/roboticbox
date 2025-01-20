@@ -7,7 +7,7 @@
     </div>
   </section>
 
-  <section class="px-40  py-24 ">
+  <section class="px-40  py-24 bg-gray-100">
     <h1 class="text-4xl mb-8 font-extrabold ">회사 개요</h1>
     <div class="flex justify-between">
       <div class="flex flex-col gap-12">
@@ -54,7 +54,7 @@
   </section>
 
 
-  <section class="px-40  py-24 bg-gray-50">
+  <section class="px-40  py-24">
     <h1 class="text-4xl mb-8 font-extrabold ">사업 영역</h1>
     <p class="text-2xl text-blue-950 font-bold">로보틱박스는 로보틱스 및 AI 전문가들로 구성되어 첨단 기술 개발 및 고도화에 주력하고 있습니다.</p>
 
@@ -85,6 +85,53 @@
         </li>
     </ul>
     </section>
+    <section class="px-40  py-24 bg-gray-100">
+        <h1 class="text-4xl mb-8 font-extrabold ">핵심 가치</h1>
+        <div class="flex items-center justify-center pt-1">
+            <img src="@/assets/img/values.png" alt="" class="max-w-[1024px]">
+        </div>
+    </section>
+
+    <section class="px-40  py-24">
+        <h1 class="text-4xl mb-8 font-extrabold ">연혁</h1>
+        <ul class="flex flex-col relative gap-20 pl-20">
+            <li class="flex gap-32 relative">
+                <h1 class="text-blue-900 font-black text-3xl">2021'</h1>
+                <div class="flex flex-col gap-8 font-medium pt-1">
+                  <p>02. 연구소 설립</p>
+                  <p>03. 경상남도 스타트업 데모 IR 대회 수상</p>
+                  <p>07. 한국전기연구원 기술이전 완료</p>
+                </div>
+                <div class="h-full absolute left-36 -top-7">
+                  <div class="size-4 border-[3px] rounded-full border-gray-500 bg-white absolute top-9 z-10"></div>
+                </div>
+            </li>
+
+            <li class="flex gap-32 relative">
+                <h1 class="text-blue-900 font-black text-3xl">2022'</h1>
+                <div class="flex flex-col gap-8 font-medium pt-1">
+                  <p>06. 제조빅데이터 포집 게이트 웨이 ‘R-GATE’ 런칭</p>
+                  <p>09. AI 엣지 컴퓨팅 ‘R-BOX’ 런칭</p>
+                </div>
+                <div class="h-full absolute left-36 -top-7">
+                  <div class="size-4 border-[3px] rounded-full border-gray-500 bg-white absolute top-9 z-10"></div>
+                </div>
+            </li>
+
+            <li class="flex gap-32 relative">
+                <h1 class="text-blue-900 font-black text-3xl">2024'</h1>
+                <div class="flex flex-col gap-8 font-medium pt-1">
+                  <p>06. 경상남도 정보 보안 IR 대회ㅏ 수상</p>
+                </div>
+                <div class="h-full absolute left-36 -top-7">
+                  <div class="size-4 border-[3px] rounded-full border-gray-500 bg-white absolute top-9 z-10"></div>
+                  <!-- <div class=" absolute h-full w-0.5 bg-gray-500 -z-10"></div> -->
+                </div>
+            </li>
+            <div class="absolute h-[calc(100%-28px)] w-0.5 bg-gray-500 -z-10 left-[231px] bottom-3"></div>
+        </ul>
+
+    </section>
 </main>
 </template>
 
@@ -94,6 +141,6 @@
 
 <style lang="scss">
 .white-gra-col{
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%,  rgba(255, 255, 255, 0.882573) 70%, rgba(255, 255, 255, 1) 80%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%,  rgba(255, 255, 255, 0.882573) 80%, rgba(255, 255, 255, 1) 90%);
 }
 </style>

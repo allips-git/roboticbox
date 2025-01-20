@@ -14,3 +14,6 @@ body {
 .swiper-dim{
     @apply flex justify-between absolute inset-0 bg-[#0D0F18] opacity-40 z-10
 }
+.input-st{
+    @apply border border-gray-200 w-full px-4 py-2.5 rounded-md
+}

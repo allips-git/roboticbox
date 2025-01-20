@@ -1,29 +1,29 @@
 <template>
-  <main class="w-full flex flex-col items-center justify-center">
+  <main class="flex flex-col items-center justify-center w-full">
     <section class="w-full relative overflow-hidden max-h-[800px] h-screen">
-        <div class="w-full absolute inset-0">
-          <div class="gra-back-row w-full left-0 z-10 absolute h-full"></div>
+        <div class="absolute inset-0 w-full">
+          <div class="absolute left-0 z-10 w-full h-full gra-back-row"></div>
           <img src="@/assets/img/main_back.png" class=" translate-x-[20%] w-full z-10 h-full object-cover" alt="">
         </div>
         <div class="absolute flex flex-col gap-[100px] w-full inset-0 z-20 px-40 py-[200px]">
             <div>
-              <h1 class="text-white text-5xl font-extrabold line-h-20">AI와 함께 가는 미래, <br> <span class="text-sky-400">로보틱박스</span>가함께합니다.</h1>
-              <p class="font-bold mt-6 text-white text-xl">TOGETHER — LET’S INNOVATE THE FUTURE — WITH AI</p>
+              <h1 class="text-5xl font-extrabold text-white line-h-20">AI와 함께 가는 미래, <br> <span class="text-sky-400">로보틱박스</span>가함께합니다.</h1>
+              <p class="mt-6 text-xl font-bold text-white">TOGETHER — LET’S INNOVATE THE FUTURE — WITH AI</p>
             </div>
             <button @click.prevent="scrollToSection" class="border border-white rounded-sm  flex-none w-[120px] text-white py-3 flex items-center justify-center">더보기<span class="ml-2">></span></button>
         </div>
     </section>
 
     <section id="about" class="flex items-center justify-center w-full flex-col bg-[#0D0F18] py-14">
-     <h1 class="text-4xl font-black text-sky-300 mb-8">ABOUT US</h1>
+     <h1 class="mb-8 text-4xl font-black text-sky-400">ABOUT US</h1>
 
      <div class="text-white">
-       <p class="text-white font-medium text-center text-2xl">로보틱박스는 자동화 기계와 데이터·AI 기술을 바탕으로 <br>
+       <p class="text-2xl font-medium text-center text-white">로보틱박스는 자동화 기계와 데이터·AI 기술을 바탕으로 <br>
         제조 및 로보틱스 분야에서 혁신적인 솔루션을 제공하는 전문 기업입니다.</p>
-        <p class="text-gray-500 text-center mt-3">(주)로보틱박스는 2021년 설립된 연구소 기업으로, 경남 창원에 본사를 두고 있으며 한국전기연구원과의 합작법인으로 출범하였습니다. <br> 고객의 안전과 효율성을 최우선으로 고려하며, 산업 환경에서의 실시간 데이터 분석과 리스크 예측을 통해 생산성 향상 및 안전 강화를 위한 첨단 기술을 개발하고 있습니다.</p>
+        <p class="mt-3 text-center text-gray-500">(주)로보틱박스는 2021년 설립된 연구소 기업으로, 경남 창원에 본사를 두고 있으며 한국전기연구원과의 합작법인으로 출범하였습니다. <br> 고객의 안전과 효율성을최우선으로 고려하며, 산업 환경에서의 실시간 데이터 분석과 리스크 예측을 통해 생산성 향상 및 안전 강화를 위한 첨단 기술을 개발하고 있습니다.</p>
      </div>
 
-       <router-link to="/about" class="border-whitet border px-4 mt-4 rounded-sm text-white py-3 flex items-center justify-center">더보기<span class="ml-2">></span></router-link>
+       <router-link to="/about" class="flex items-center justify-center px-4 py-3 mt-4 text-white border rounded-sm border-whitet">더보기<span class="ml-2">></span></router-link>
 
      <swiper
         ref="swiperRef"
@@ -38,8 +38,8 @@
         <swiper-slide>
             <div class="swiper_container">
                 <div class="swiper_contents gra-back-row">
-                    <h2 class="text-3xl font-bold text-sky-300 w-full">AI 기반 안전 관제 솔루션</h2>
-                    <p class="text-lg  text-white mt-2">물류 사고를 줄이기 위한 <br> 지게차 안전 관제 시스템 등 IOT
+                    <h2 class="w-full text-3xl font-bold text-sky-300">AI 기반 안전 관제 솔루션</h2>
+                    <p class="mt-2 text-lg text-white">물류 사고를 줄이기 위한 <br> 지게차 안전 관제 시스템 등 IOT
                         와 AI 기술을 융합한 안전 관리 솔루션을 제공합니다.</p>
                 </div>
                 <div class="swiper-dim">
@@ -52,8 +52,8 @@
         <swiper-slide>
             <div class="swiper_container">
                 <div class="swiper_contents gra-back-row">
-                    <h2 class="text-3xl font-bold text-sky-300 w-full">상용 PLC 및 <br> 로봇암 관리 엣지 디바이스</h2>
-                    <p class="text-lg  text-white mt-2">로봇 및 공정 상태를 실시간으로 관리하는 <br> 엣지 디바이스를 개발하여 효율적인 공정 운영을 지원합니다.</p>
+                    <h2 class="w-full text-3xl font-bold text-sky-300">상용 PLC 및 <br> 로봇암 관리 엣지 디바이스</h2>
+                    <p class="mt-2 text-lg text-white">로봇 및 공정 상태를 실시간으로 관리하는 <br> 엣지 디바이스를 개발하여 효율적인 공정 운영을 지원합니다.</p>
                 </div>
                 <div class="swiper-dim">
                     <div class="absolute inset-0 bg-[#0D0F18] opacity-40 z-10 h-full"></div>
@@ -66,8 +66,8 @@
         <swiper-slide>
             <div class="swiper_container">
                 <div class="swiper_contents gra-back-row">
-                    <h2 class="text-3xl font-bold text-sky-300 w-full">스마트 물류 이송 공정 구축</h2>
-                    <p class="text-lg  text-white mt-2">웹 기반 상태인식 기능을 통해 <br> 공정 효율성을 극대화한 스마트 장치를 설계 및 구현합니다.</p>
+                    <h2 class="w-full text-3xl font-bold text-sky-300">스마트 물류 이송 공정 구축</h2>
+                    <p class="mt-2 text-lg text-white">웹 기반 상태인식 기능을 통해 <br> 공정 효율성을 극대화한 스마트 장치를 설계 및 구현합니다.</p>
                 </div>
                 <div class="swiper-dim">
                     <div class="w-40 h-40"></div>
@@ -80,27 +80,27 @@
     </section>
     <div class="relative w-full">
       <div class="triangle absolute z-[100]"></div>
-      <div class="absolute -top-2 w-full">
+      <div class="absolute w-full -top-2">
         <div class="bg-[#0D0F18] w-full h-6"></div>
         <div class="triangle-2"></div>
       </div>
     </div>
 
-    <section class="px-40 pt-40 w-full">
-        <h2 class="text-4xl font-black text-sky-400 mb-8 w-full text-center roboto">TECHNOLOGIES</h2>
-        <div class="flex flex-col gap-3 w-full justify-center text-center">
-            <p class="font-bold text-center text-2xl">로보틱박스는 언제나 혁신적인 접근으로 산업 환경의 미래 솔루션을 제공하고 있습니다.</p>
-            <p class="text-gray-400">로보틱박스는 AI와 빅데이터 기술을 바탕으로 제조 산업에서 혁신적인 자동화 솔루션을 제공합니다. <br> 우리는 생산 공정과 원자재 분석에서부터 교통 안전 및 강재 특성 예측까지, 데이터를 활용해
+    <section class="w-full px-40 pt-40">
+        <h2 class="w-full mb-8 text-4xl font-black text-center text-sky-400 roboto">TECHNOLOGIES</h2>
+        <div class="flex flex-col justify-center w-full gap-3 text-center">
+            <p class="text-2xl font-bold text-center">로보틱박스는 언제나 혁신적인 접근으로 산업 환경의 미래 솔루션을 제공하고 있습니다.</p>
+            <p class="text-gray-400">로보틱박스는 AI와 빅데이터 기술을 바탕으로 제조 산업에서 혁신적인 자동화 솔루션을 제공합니다. <br> 우리는 생산 공정과 원자재 분석에서부터 교통 안전 및 강재특성 예측까지, 데이터를 활용해
                 더 안전하고 효율적인 환경를 만들기 위해 최적화된 기술로 미래 산업의 새로운 기준을 제시하고 있습니다.</p>
         </div>
 
         <div class="relative">
             <p class="text-[128px] font-black w-full text-center text-gray-200 roboto">TECHNOLOGIES</p>
-            <ul class="grid grid-cols-5 gap-4 relative -top-24">
+            <ul class="relative grid grid-cols-5 gap-4 -top-24">
                 <li
                 v-for="(item, index) in items"
                 :key="index"
-                class="text-center bg-white border border-gray-100 py-6 px-6 shadow-sm rounded-md"
+                class="px-6 py-6 text-center bg-white border border-gray-100 rounded-md shadow-sm"
                 >
                 <div class="flex justify-center">
                   <img :src="item.image" alt="" class="h-[70px] mb-5">
@@ -112,11 +112,11 @@
             </ul>
         </div>
     </section>
-    <section class="flex justify-start relative w-full">
+    <section class="relative flex justify-start w-full">
         <img src="/src/assets/img/index_mock.png" alt="" class="max-w-[1000px] h-full max-h-[700px] object-cover w-[50vw] absolute inset-0">
         <div class="w-full white-gra min-h-full py-32 z-10 flex flex-col pl-[30vw] pr-40">
-             <h2 class="text-4xl font-black text-sky-400 mb-8 w-full roboto">KEY SOLUTION</h2>
-             <p class="font-extrabold  text-4xl">물류 사고 감소를 위한 <br>
+             <h2 class="w-full mb-8 text-4xl font-black text-sky-400 roboto">KEY SOLUTION</h2>
+             <p class="text-4xl font-extrabold">물류 사고 감소를 위한 <br>
                 AI 지게차 안전 관제 솔루션</p>
             <p class="mt-10">로보틱박스는 AI 지게차 안전 관제 솔루션은
 지게차 및 작업자의 움직임을 관측할 수 있는
