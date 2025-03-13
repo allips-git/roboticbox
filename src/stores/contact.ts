@@ -35,8 +35,8 @@ interface State {
 export const useContactStore = defineStore('contact', {
     state: (): State => ({
         state       : false,
-        serviceId   : 'service_1k4x1s6',
-        templateId  : 'template_gv2lgsd',
+        serviceId   : 'service_7u9e0s7',
+        templateId  : 'template_zpwstyr',
         checked     : false,
         formData    : getFormData(),
         msg         : getFormData()
@@ -46,7 +46,7 @@ export const useContactStore = defineStore('contact', {
         {
             this.state = true;
             
-            await emailjs.send(this.serviceId, this.templateId, this.formData, 'bWa0bfdRj9vzDYOzk').then(() => {
+            await emailjs.send(this.serviceId, this.templateId, this.formData, 'tQPnjInLPnn11zPih').then(() => {
                 alert('문의하기가 완료되었습니다.');
                 this.getReset();
             }).catch((e) => {
