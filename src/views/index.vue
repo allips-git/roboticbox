@@ -1,136 +1,165 @@
 <template>
-  <main class="flex flex-col items-center justify-center w-full">
-    <section class="w-full relative overflow-hidden max-h-[800px] h-screen">
-        <div class="absolute inset-0 w-full">
-          <div class="absolute left-0 z-10 w-full h-full gra-back-row"></div>
-          <img src="@/assets/img/main_back.png" class=" translate-x-[20%] w-full z-10 h-full object-cover" alt="">
+  <main class="flex flex-col justify-center items-center w-full">
+    <section class="w-full relative overflow-hidden max-h-[22rem] sm:max-h-[30rem] lg:max-h-[40rem] xl:max-h-[48rem] h-screen">
+      <div class="absolute inset-0 w-full">
+        <div class="absolute left-0 z-10 w-full h-full gra-back-row"></div>
+        <img src="@/assets/img/main_back.png" class=" translate-x-[20%] w-full z-10 h-full object-cover" alt="">
+      </div>
+      <div class="absolute inset-0 z-20 w-full">
+        <div class="inner pt-[5rem] sm:pt-[7rem] lg:pt-[12rem]">
+          <h1 class="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl line-h-20">
+            AI와 함께 가는 미래, <br> <span class="text-sky-400">로보틱박스</span>가함께합니다.
+          </h1>
+          <p class="mt-2 text-lg font-bold text-white sm:mt-4 lg:text-xl lg:mt-6">
+            TOGETHER — LET’S INNOVATE THE FUTURE — WITH AI
+          </p>
+          <button @click.prevent="scrollToSection" class="mt-12 sm:mt-14 lg:mt-[6rem] border border-white rounded-sm flex-none w-[8rem] text-white py-3 flex items-center justify-center">
+            더보기<span class="ml-2">&gt;</span>
+          </button>
         </div>
-        <div class="absolute flex flex-col gap-[100px] w-full inset-0 z-20 px-40 py-[200px]">
-            <div>
-              <h1 class="text-5xl font-extrabold text-white line-h-20">AI와 함께 가는 미래, <br> <span class="text-sky-400">로보틱박스</span>가함께합니다.</h1>
-              <p class="mt-6 text-xl font-bold text-white">TOGETHER — LET’S INNOVATE THE FUTURE — WITH AI</p>
-            </div>
-            <button @click.prevent="scrollToSection" class="border border-white rounded-sm  flex-none w-[120px] text-white py-3 flex items-center justify-center">더보기<span class="ml-2">></span></button>
-        </div>
+      </div>
     </section>
 
     <section id="about" class="flex items-center justify-center w-full flex-col bg-[#0D0F18] py-14">
-     <h1 class="mb-8 text-4xl font-black text-sky-400">ABOUT US</h1>
-
-     <div class="text-white">
-       <p class="text-2xl font-medium text-center text-white">로보틱박스는 자동화 기계와 데이터·AI 기술을 바탕으로 <br>
-        제조 및 로보틱스 분야에서 혁신적인 솔루션을 제공하는 전문 기업입니다.</p>
-        <p class="mt-3 text-center text-gray-500">(주)로보틱박스는 2021년 설립된 연구소 기업으로, 경남 창원에 본사를 두고 있으며 한국전기연구원과의 합작법인으로 출범하였습니다. <br> 고객의 안전과 효율성을최우선으로 고려하며, 산업 환경에서의 실시간 데이터 분석과 리스크 예측을 통해 생산성 향상 및 안전 강화를 위한 첨단 기술을 개발하고 있습니다.</p>
-     </div>
-
-       <router-link to="/about" class="flex items-center justify-center px-4 py-3 mt-4 text-white border rounded-sm border-whitet">더보기<span class="ml-2">></span></router-link>
+      <h2 class="text-2xl font-extrabold text-center text-sky-400 md:text-3xl lg:text-4xl roboto">
+        ABOUT US
+      </h2>
+      <h3 class="mt-6 text-lg font-bold text-center text-white md:mt-8 md:text-xl lg:text-2xl break-keep">
+        로보틱박스는 자동화 기계와 데이터·AI 기술을 바탕으로 <span class="sm:block">제조 및 로보틱스 분야에서 혁신적인 솔루션을 제공하는 전문 기업입니다.</span>
+      </h3>
+      <p class="mt-3 text-center text-gray-500 lg:mt-4 break-keep">
+        (주)로보틱박스는 2021년 설립된 연구소 기업으로, 경남 창원에 본사를 두고 있으며 한국전기연구원과의 합작법인으로 출범하였습니다.<br>
+        고객의 안전과 효율성을최우선으로 고려하며, 산업 환경에서의 실시간 데이터 분석과 리스크 예측을 통해 생산성 향상 및 안전 강화를 위한 첨단 기술을 개발하고 있습니다.
+      </p>
+      <router-link to="/about" class="flex justify-center items-center w-[8rem] py-3 mt-4 sm:mt-5 lg:mt-8 text-white rounded-sm border border-whitet">
+        더보기<span class="ml-2">></span>
+      </router-link>
 
      <swiper
         ref="swiperRef"
-        :slides-per-view="1.8"
-        :initial-slide="1"
-        :centered-slides="true"
-        :space-between="60"
-        :navigation="true"
-        :modules="modules"
-        class="mt-8 h-[400px]"
+        v-bind="swiperOptions"
+        class="mt-8 sm:mt-10 lg:mt-12"
      >
-        <swiper-slide>
-            <div class="swiper_container">
-                <div class="swiper_contents gra-back-row">
-                    <h2 class="w-full text-3xl font-bold text-sky-300">AI 기반 안전 관제 솔루션</h2>
-                    <p class="mt-2 text-lg text-white">물류 사고를 줄이기 위한 <br> 지게차 안전 관제 시스템 등 IOT
-                        와 AI 기술을 융합한 안전 관리 솔루션을 제공합니다.</p>
-                </div>
-                <div class="swiper-dim">
-                    <div class="w-40 h-40"></div>
-                    <img  src="@/assets/img/banner_03.png" class="slide-image aspect-[4/3] rounded-sm"  />
-                </div>
-            </div>
-        </swiper-slide>
-
-        <swiper-slide>
-            <div class="swiper_container">
-                <div class="swiper_contents gra-back-row">
-                    <h2 class="w-full text-3xl font-bold text-sky-300">상용 PLC 및 <br> 로봇암 관리 엣지 디바이스</h2>
-                    <p class="mt-2 text-lg text-white">로봇 및 공정 상태를 실시간으로 관리하는 <br> 엣지 디바이스를 개발하여 효율적인 공정 운영을 지원합니다.</p>
-                </div>
-                <div class="swiper-dim">
-                    <div class="absolute inset-0 bg-[#0D0F18] opacity-40 z-10 h-full"></div>
-                    <div class="w-40 h-40"></div>
-                    <img  src="@/assets/img/banner_01.png" class="slide-image aspect-[4/3] rounded-sm"  />
-                </div>
-            </div>
-        </swiper-slide>
-
-        <swiper-slide>
-            <div class="swiper_container">
-                <div class="swiper_contents gra-back-row">
-                    <h2 class="w-full text-3xl font-bold text-sky-300">스마트 물류 이송 공정 구축</h2>
-                    <p class="mt-2 text-lg text-white">웹 기반 상태인식 기능을 통해 <br> 공정 효율성을 극대화한 스마트 장치를 설계 및 구현합니다.</p>
-                </div>
-                <div class="swiper-dim">
-                    <div class="w-40 h-40"></div>
-                    <img  src="@/assets/img/banner_02.png" class="slide-image aspect-[4/3] rounded-sm"  />
-                </div>
-            </div>
-        </swiper-slide>
+      <swiper-slide>
+        <div class="swiper_container">
+          <div class="swiper_contents gra-back-row">
+            <h4 class="w-full text-xl font-bold text-sky-300 sm:text-2xl lg:text-3xl">
+              AI 기반 안전 관제 솔루션
+            </h4>
+            <p class="mt-2 text-sm text-white sm:mt-4 lg:mt-4 sm:text-base lg:text-lg">
+              물류 사고를 줄이기 위한 <br>
+              지게차 안전 관제 시스템 등 IOT와 AI 기술을 융합한 안전 관리 솔루션을 제공합니다.
+            </p>
+          </div>
+          <div class="swiper-dim">
+            <div class="w-40 h-40"></div>
+            <img src="@/assets/img/banner_03.png" class="slide-image aspect-[4/3] rounded-sm" />
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="swiper_container">
+          <div class="swiper_contents gra-back-row">
+            <h4 class="w-full text-xl font-bold text-sky-300 sm:text-2xl lg:text-3xl">
+              상용 PLC 및 <br>
+              로봇암 관리 엣지 디바이스
+            </h4>
+            <p class="mt-2 text-sm text-white sm:mt-4 lg:mt-4 sm:text-base lg:text-lg">
+              로봇 및 공정 상태를 실시간으로 관리하는 <br>
+              엣지 디바이스를 개발하여 효율적인 공정 운영을 지원합니다.
+            </p>
+          </div>
+          <div class="swiper-dim">
+            <div class="absolute inset-0 bg-[#0D0F18] opacity-40 z-10 h-full"></div>
+            <div class="w-40 h-40"></div>
+            <img src="@/assets/img/banner_01.png" class="slide-image aspect-[5/3] rounded-sm" />
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="swiper_container">
+          <div class="swiper_contents gra-back-row">
+            <h4 class="w-full text-xl font-bold text-sky-300 sm:text-2xl lg:text-3xl">
+              스마트 물류 이송 공정 구축
+            </h4>
+            <p class="mt-2 text-sm text-white sm:mt-4 lg:mt-4 sm:text-base lg:text-lg">
+              웹 기반 상태인식 기능을 통해 <br>
+              공정 효율성을 극대화한 스마트 장치를 설계 및 구현합니다.
+            </p>
+          </div>
+          <div class="swiper-dim">
+            <div class="w-40 h-40"></div>
+            <img src="@/assets/img/banner_02.png" class="slide-image aspect-[4/3] rounded-sm" />
+          </div>
+        </div>
+      </swiper-slide>
     </swiper>
 
     </section>
     <div class="relative w-full">
       <div class="triangle absolute z-[100]"></div>
-      <div class="absolute w-full -top-2">
+      <div class="absolute -top-2 w-full">
         <div class="bg-[#0D0F18] w-full h-6"></div>
         <div class="triangle-2"></div>
       </div>
     </div>
 
-    <section class="w-full px-40 pt-40">
-        <h2 class="w-full mb-8 text-4xl font-black text-center text-sky-400 roboto">TECHNOLOGIES</h2>
-        <div class="flex flex-col justify-center w-full gap-3 text-center">
-            <p class="text-2xl font-bold text-center">로보틱박스는 언제나 혁신적인 접근으로 산업 환경의 미래 솔루션을 제공하고 있습니다.</p>
-            <p class="text-gray-400">로보틱박스는 AI와 빅데이터 기술을 바탕으로 제조 산업에서 혁신적인 자동화 솔루션을 제공합니다. <br> 우리는 생산 공정과 원자재 분석에서부터 교통 안전 및 강재특성 예측까지, 데이터를 활용해
-                더 안전하고 효율적인 환경를 만들기 위해 최적화된 기술로 미래 산업의 새로운 기준을 제시하고 있습니다.</p>
+    <section class="pt-[9rem] lg:pt-[10rem] pb-10 sm:pb-12 md:pb-15 lg:pb-18 xl:pb-20">
+      <div class="inner">
+        <h2 class="text-2xl font-extrabold text-center text-sky-400 md:text-3xl lg:text-4xl roboto">
+          TECHNOLOGIES
+        </h2>
+        <h3 class="mt-6 text-lg font-bold text-center md:mt-8 md:text-xl lg:text-2xl break-keep">
+          로보틱박스는 언제나 혁신적인 접근으로 산업 환경의 미래 솔루션을 제공하고 있습니다.
+        </h3>
+        <p class="mt-3 text-center text-gray-400 lg:mt-4 break-keep">
+          로보틱박스는 AI와 빅데이터 기술을 바탕으로 제조 산업에서 혁신적인 자동화 솔루션을 제공합니다.<br>
+          우리는 생산 공정과 원자재 분석에서부터 교통 안전 및 강재특성 예측까지, 데이터를 활용해 더 안전하고 효율적인 환경를 만들기 위해 최적화된 기술로 미래 산업의 새로운 기준을 제시하고 있습니다.
+        </p>
+        <div class="relative mt-4">
+          <div class="text-[12vw] lg:text-[8rem] font-black text-center text-gray-200 roboto">
+            TECHNOLOGIES
+          </div>
+          <ul class="grid relative -top-[8.5vw] -mb-[5vw] lg:-mb-[4rem] lg:-top-[5.75rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            <li
+              v-for="(item, index) in items"
+              :key="index"
+              class="px-4 py-6 text-center bg-white rounded-md border border-gray-100 shadow-sm sm:py-7"
+            >
+              <div class="flex justify-center">
+                <img :src="item.image" alt="" class="h-[3.5rem] lg:h-[4.375rem] mb-3 lg:mb-5">
+              </div>
+              <p class="font-bold text-lg lg:text-xl leading-[1.4] mb-1.5 lg:mb-2 text-[#1483DF]" v-html="item.title"></p>
+              <p class="text-sm break-keep" v-html="item.description"></p>
+            </li>
+          </ul>
         </div>
-
-        <div class="relative">
-            <p class="text-[128px] font-black w-full text-center text-gray-200 roboto">TECHNOLOGIES</p>
-            <ul class="relative grid grid-cols-5 gap-4 -top-24">
-                <li
-                v-for="(item, index) in items"
-                :key="index"
-                class="px-6 py-6 text-center bg-white border border-gray-100 rounded-md shadow-sm"
-                >
-                <div class="flex justify-center">
-                  <img :src="item.image" alt="" class="h-[70px] mb-5">
-
-                </div>
-                <p class="font-bold text-xl mb-2 text-[#1483DF]" v-html="item.title"></p>
-                <p class="text-sm" v-html="item.description"></p>
-                </li>
-            </ul>
-        </div>
+      </div>
     </section>
-    <section class="relative flex justify-start w-full">
-        <img src="/src/assets/img/index_mock.png" alt="" class="max-w-[1000px] h-full max-h-[700px] object-cover w-[50vw] absolute inset-0">
-        <div class="w-full white-gra min-h-full py-32 z-10 flex flex-col pl-[30vw] pr-40">
-             <h2 class="w-full mb-8 text-4xl font-black text-sky-400 roboto">KEY SOLUTION</h2>
-             <p class="text-4xl font-extrabold">물류 사고 감소를 위한 <br>
-                AI 지게차 안전 관제 솔루션</p>
-            <p class="mt-10">로보틱박스는 AI 지게차 안전 관제 솔루션은
-지게차 및 작업자의 움직임을 관측할 수 있는
-TopView 관제 시스템을 도입하여
-영상 속 지게차와 작업자의 라벨링 및
-이동 동선 예측 모델링을 통하여 객체 이동 동선의
-사고를 예측하고 태블릿을 통해 지게차 운전자에게
-알람을 제공하여 사전에 지게차와
-작업자간의 충돌을 예방하는 시스템을 주요 기술로 제공하고 있습니다</p>
-<router-link to="/technologies" class="border border-gray-900 rounded-sm mt-20 flex-none w-[120px] text-gray-900 py-3 flex items-center justify-center">더보기<span class="ml-2">></span></router-link>
+
+    <section class="relative pb-[4rem] lg:pb-0 w-full">
+        <img src="/src/assets/img/index_mock.png" alt="" class="object-cover lg:max-w-[800px] relative z-0 w-full max-h-[25rem] md:max-h-[32rem] lg:h-[36rem] lg:max-h-[36rem] xl:h-[40rem] xl:max-h-[40rem]">
+        <div class="relative lg:absolute inset-0 z-10 -mt-[20rem] pt-[12rem] lg:mt-0 lg:pt-0 w-full lg:h-[40rem] white-gra-col-to-b">
+          <div class="flex justify-center items-center w-full h-full inner">
+            <div class="lg:pl-[24vw] xl:pl-[18rem]">
+              <h2 class="text-2xl font-extrabold text-sky-400 md:text-3xl lg:text-4xl roboto">
+                KEY SOLUTION
+              </h2>
+              <h3 class="mt-6 text-2xl font-extrabold md:mt-8 md:text-3xl lg:text-4xl">
+                물류 사고 감소를 위한 <br>
+                AI 지게차 안전 관제 솔루션
+              </h3>
+              <p class="mt-4 lg:mt-6 xl:mt-8 break-keep">
+                로보틱박스는 AI 지게차 안전 관제 솔루션은 지게차 및 작업자의 움직임을 관측할 수 있는 TopView 관제 시스템을 도입하여 영상 속 지게차와 작업자의 라벨링 및 이동 동선 예측 모델링을 통하여 객체 이동 동선의 사고를 예측하고 태블릿을 통해 지게차 운전자에게 알람을 제공하여 사전에 지게차와 작업자간의 충돌을 예방하는 시스템을 주요 기술로 제공하고 있습니다.
+              </p>
+              <router-link to="/technologies" class="border border-gray-900 rounded-sm mt-6 lg:mt-12 xl:mt-16 flex-none w-[120px] text-gray-900 py-3 flex items-center justify-center">
+                더보기<span class="ml-2">&gt;</span>
+              </router-link>
+            </div>
+          </div>
         </div>
     </section>
   </main>
-
 </template>
 
 <script lang="ts" setup>
@@ -171,7 +200,7 @@ const items = ref([
   {
     image: indexList05,
     title: '압연공정 이상 예지 <br> AI 예측 시스템',
-    description: '압연 과정에서 발생할 수 있는 이상 상황을 데이터를 분석하여<br>미리 예측하고 대응하는 기술',
+    description: '압연 과정에서 발생할 수 있는<br>이상 상황을 데이터를 분석하여 미리 예측하고 대응하는 기술',
   },
 ]);
 
@@ -213,6 +242,20 @@ onMounted(() => {
     console.log('Swiper 컴포넌트가 아직 렌더링되지 않았습니다.');
   }
 });
+
+const swiperOptions = {
+  slidesPerView: 1.8,
+  initialSlide: 1,
+  centeredSlides: true,
+  spaceBetween: 60,
+  navigation: true,
+  modules,
+  breakpoints: {
+    0: { slidesPerView: 1.1, spaceBetween: 0 },
+    640: { slidesPerView: 1.4, spaceBetween: 30 },
+    1024: { slidesPerView: 1.8, spaceBetween: 60 }
+  }
+};
 </script>
 
 
@@ -229,19 +272,25 @@ onMounted(() => {
     line-height: 1.3;
 }
 .triangle {
-    width: 100%; /* 너비를 100%로 설정 */
+  width: 100%; /* 너비를 100%로 설정 */
   height: 80px; /* 높이 설정 */
   background:#0D0F18;
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
 }
 .triangle-2 {
-    width: 100%; /* 너비를 100%로 설정 */
+  width: 100%; /* 너비를 100%로 설정 */
   height: 80px; /* 높이 설정 */
   background: linear-gradient(0deg, #F0F0F0 -26.27%, #1A1E33 65.49%); /* 그라데이션 배경 */
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%); /* 아래쪽으로 향하는 삼각형 모양 */
 }
-.white-gra{
+.white-gra {
     background: linear-gradient(270deg, #FFFFFF 66.43%, rgba(255, 255, 255, 0.518431) 81.77%, rgba(255, 255, 255, 0) 96.47%);
+}
+.white-gra-col-to-b {
+    background: linear-gradient(0, #FFFFFF 66.43%, rgba(255, 255, 255, 0.518431) 81.77%, rgba(255, 255, 255, 0) 96.47%);
+    @media (min-width: 1024px) {
+      background: linear-gradient(270deg, #FFFFFF 66.43%, rgba(255, 255, 255, 0.518431) 81.77%, rgba(255, 255, 255, 0) 96.47%);
+    }
 }
 .slide-image {
   width: calc(100% - 160px);
@@ -274,14 +323,25 @@ onMounted(() => {
   }
 }
 .swiper-button-prev{
-  left: 22vw !important;
+  left: 2vw !important;
+  @media (min-width: 640px) {
+    left: 12vw !important;
+  }
+  @media (min-width: 1024px) {
+    left: 22vw !important;
+  }
   &::after {
       content: '<';
   }
 }
-
 .swiper-button-next{
-  right: 22vw !important;
+  right: 2vw !important;
+  @media (min-width: 640px) {
+    right: 12vw !important;
+  }
+  @media (min-width: 1024px) {
+    right: 22vw !important;
+  }
   &::after {
       content: '>';
   }
@@ -289,5 +349,4 @@ onMounted(() => {
 .swiper-button-next::after {
     content: '>';
 }
-
 </style>
