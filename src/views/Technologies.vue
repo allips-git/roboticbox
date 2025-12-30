@@ -175,9 +175,36 @@
               <div class="flex col-span-2 gap-4 justify-end text-xs">
                   <div><span class="text-green-500">초록색</span>: 실제 이동 경로</div>
                   <div><span class="text-yellow-500">노란색</span><span>: 관측 데이터</span></div>
-                  <div><span class="text-red-500">빨간색</span><span>: 얘측 데이터</span></div>
+                  <div><span class="text-red-500">빨간색</span><span>: 예측 데이터</span></div>
               </div>
               <img src="@/assets/img/service_05.png" alt="동선 예측 및 위험 알람 시스템2" class="col-span-2">
+            </div>
+          </div>
+          <div class="flex flex-col gap-6 md:gap-10 lg:gap-12 md:flex-row">
+            <div class="flex flex-col gap-3 justify-between h-full md:flex-1 lg:shrink-0 md:w-[50%] lg:w-[42%] lg:flex-none pb-1">
+              <h3 class="text-xl font-black xl:text-2xl text-blue-950">
+                  <span class="mr-2">03</span>
+                  <span class="font-bold">실시간 태블릿 알람</span>
+              </h3>
+              <div class="space-y-4 xl:text-[1.0625rem]">
+                <p>
+                  태블릿에서는 AI 기반 지게차 안전 관제 시스템의 실시간 경고 동작을 보여줍니다. 지게차가 전진 또는 후진 중일 때 약 2m 이내에서 작업자가 감지되면, 시스템이 잠재적인 충돌 위험을 자동으로 판단하고 운전자 태블릿으로 경고 알람을 전송합니다.
+                </p>
+                <p>
+                  태블릿 화면은 즉각적인 인지를 위해 붉은색 화면과 함께 경고 효과로 전환되며, 동시에 알람 발생 시점과 이벤트 시작·종료 시간이 데이터베이스에 기록되어 사후 확인 및 안전 관리에 활용 가능합니다.
+                </p>
+              </div>
+            </div>
+            <div class="self-end md:flex-1">
+              <video
+                :src="tabletVideo"
+                class="w-full rounded-md shadow-lg"
+                controls
+                playsinline
+                preload="metadata"
+              >
+                브라우저가 동영상을 지원하지 않습니다.
+              </video>
             </div>
           </div>
         </div>
@@ -188,6 +215,7 @@
 
 <script lang="ts" setup>
 import video from '@/assets/img/robo_video_40.mp4';
+import tabletVideo from '@/assets/img/v4.mp4';
 </script>
 
 <style lang="scss">
