@@ -16,7 +16,7 @@
           <h3 class="text-base font-medium lg:mb-2 roboto">ADDRESS</h3>
           <ul class="flex flex-col gap-1 mt-1 text-sm">
             <li>본사 :  경상남도 창원시 성산구 전기의길 10, 102호</li>
-            <li>부산지사 : 부산광역시 남구 전포대로 133, 위워크 109호</li>
+            <li>부산지사 : 부산광역시 금정구 두실로24, 4층</li>
           </ul>
         </div>
         <div>
