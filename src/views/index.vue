@@ -104,7 +104,7 @@
       </div>
     </div>
 
-    <section class="pt-[9rem] lg:pt-[10rem] pb-10 sm:pb-12 md:pb-15 lg:pb-18 xl:pb-20">
+    <section class="w-full pt-[13rem] lg:pt-[15rem] pb-[6rem] sm:pb-12 md:pb-[10rem] lg:pb-pb-[10rem] xl:pb-[10rem] bg-[#f4f5f6]">
       <div class="inner">
         <h2 class="text-2xl font-extrabold text-center text-sky-400 md:text-3xl lg:text-4xl roboto">
           TECHNOLOGIES
@@ -114,9 +114,9 @@
         </h3>
         <p class="mt-3 text-center text-gray-400 lg:mt-4 break-keep">
           로보틱박스는 AI와 빅데이터 기술을 바탕으로 제조 산업에서 혁신적인 자동화 솔루션을 제공합니다.<br>
-          우리는 생산 공정과 원자재 분석에서부터 교통 안전 및 강재특성 예측까지, 데이터를 활용해 더 안전하고 효율적인 환경를 만들기 위해 최적화된 기술로 미래 산업의 새로운 기준을 제시하고 있습니다.
+          우리는 생산 공정과 원자재 분석에서부터 교통 안전 및 강재특성 예측까지, <br>데이터를 활용해 더 안전하고 효율적인 환경를 만들기 위해 최적화된 기술로 미래 산업의 새로운 기준을 제시하고 있습니다.
         </p>
-        <div class="relative mt-4">
+        <!-- <div class="relative mt-4">
           <div class="text-[12vw] lg:text-[8rem] font-black text-center text-gray-200 roboto">
             TECHNOLOGIES
           </div>
@@ -133,7 +133,7 @@
               <p class="text-sm break-keep" v-html="item.description"></p>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </section>
 

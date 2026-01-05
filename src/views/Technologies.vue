@@ -180,7 +180,7 @@
               <img src="@/assets/img/service_05.png" alt="동선 예측 및 위험 알람 시스템2" class="col-span-2">
             </div>
           </div>
-          <div class="flex flex-col gap-6 md:gap-10 lg:gap-12 md:flex-row">
+          <!-- <div class="flex flex-col gap-6 md:gap-10 lg:gap-12 md:flex-row">
             <div class="flex flex-col gap-3 justify-between h-full md:flex-1 lg:shrink-0 md:w-[50%] lg:w-[42%] lg:flex-none pb-1">
               <h3 class="text-xl font-black xl:text-2xl text-blue-950">
                   <span class="mr-2">03</span>
@@ -206,7 +206,7 @@
                 브라우저가 동영상을 지원하지 않습니다.
               </video>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
