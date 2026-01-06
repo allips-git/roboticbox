@@ -79,11 +79,14 @@
     </div>
 
     <!-- Language Dropdown - Fixed to top right on larger screens -->
-    <div class="hidden sm:block absolute top-4 right-4 z-50" ref="dropdownRefDesktop">
+    <div
+      class="hidden sm:block absolute top-1/2 -translate-y-1/2 right-4 z-50"
+      ref="dropdownRefDesktop"
+    >
       <div class="relative">
         <button
           @click.stop="toggleDropdown"
-          class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          class="flex items-center gap-2 px-4 py-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
           <span>{{ t('header.language') }}</span>
           <svg
