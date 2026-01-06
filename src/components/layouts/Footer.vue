@@ -7,37 +7,40 @@
           <h3 class="text-base font-medium lg:mb-2 roboto">COMPANY</h3>
           <ul class="flex flex-col gap-1 mt-1 text-sm">
             <li>
-              <router-link to="/contact">솔루션 문의하기</router-link>
+              <router-link to="/contact">{{ t('footer.company.inquiry') }}</router-link>
             </li>
-            <li class="cursor-pointer" @click="getDownload">회사소개서 다운로드</li>
+            <li class="cursor-pointer" @click="getDownload">{{ t('footer.company.download') }}</li>
           </ul>
         </div>
         <div>
           <h3 class="text-base font-medium lg:mb-2 roboto">ADDRESS</h3>
           <ul class="flex flex-col gap-1 mt-1 text-sm">
-            <li>본사 :  경상남도 창원시 성산구 전기의길 10, 102호</li>
-            <li>부산지사 : 부산광역시 금정구 두실로24, 4층</li>
+            <li>{{ t('footer.address.headquarters') }}</li>
+            <li>{{ t('footer.address.busan') }}</li>
           </ul>
         </div>
         <div>
           <h3 class="text-base font-medium lg:mb-2 roboto">CONTACT</h3>
           <ul class="flex flex-col gap-1 mt-1 text-sm">
-            <li>대표 : 하현수</li>
-            <li>Mobile : 010-2951-0068</li>
-            <li>Tel : 051-711-3468</li>
-            <li>Fax : 051-518-8901</li>
+            <li>{{ t('footer.contact.ceo') }}</li>
+            <li>{{ t('footer.contact.mobile') }}</li>
+            <li>{{ t('footer.contact.tel') }}</li>
+            <li>{{ t('footer.contact.fax') }}</li>
           </ul>
         </div>
       </section>
     </footer>
     <div class="max-w-[1280px] w-full">
-      <p class="px-5 mt-5 text-[0.8125rem] text-left text-gray-500">ⓒ 2025. (주)로보틱박스</p>
+      <p class="px-5 mt-5 text-[0.8125rem] text-left text-gray-500">{{ t('footer.copyright') }}</p>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
+import { useTranslation } from '@/composables/useTranslation'
 import compressed from '@/assets/file/compressed.pdf'; // 파일 경로 가져오기
+
+const { t } = useTranslation()
 
 const getDownload = () => {
     const link      = document.createElement('a');
