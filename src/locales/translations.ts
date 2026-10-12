@@ -64,7 +64,13 @@ export type TranslationKey =
   | 'about.history.2021.item3'
   | 'about.history.2022.item1'
   | 'about.history.2022.item2'
+  | 'about.history.2023.item1'
   | 'about.history.2024.item1'
+  | 'about.history.2024.item2'
+  | 'about.history.2025.item1'
+  | 'about.history.2025.item2'
+  | 'about.history.2026.item1'
+  | 'about.history.2026.item2'
 
   // Technologies
   | 'technologies.title'
@@ -218,12 +224,18 @@ export const translations: Record<'ko' | 'en', Record<TranslationKey, string>> =
       "HIKROBOT 모바일 로봇, 마그네틱 그리퍼, MoonLifter와 맞춤형 지그를 활용해 이송·핸들링·검사·적재 공정을 자동화합니다.",
     'about.values.title': '핵심 가치',
     'about.history.title': '연혁',
-    'about.history.2021.item1': '02. 연구소 설립',
+    'about.history.2021.item1': '02.04. 로보틱박스 연구소기업 설립',
     'about.history.2021.item2': '03. 경상남도 스타트업 데모 IR 대회 수상',
     'about.history.2021.item3': '07. 한국전기연구원 기술이전 완료',
-    'about.history.2022.item1': "06. 제조빅데이터 포집 게이트 웨이 'R-GATE' 런칭",
-    'about.history.2022.item2': "09. AI 엣지 컴퓨팅 'R-BOX' 런칭",
-    'about.history.2024.item1': '11. 경상남도 정보보안 IR 경진대회 수상',
+    'about.history.2022.item1': "06. 산업 데이터 게이트웨이 'R-GATE' 런칭",
+    'about.history.2022.item2': "09. AI 엣지 컴퓨팅 디바이스 'R-BOX' 런칭",
+    'about.history.2023.item1': '산업 AI, 설비 데이터, 제조 자동화 분야 응용 개발 확대',
+    'about.history.2024.item1': '11. 경상남도 정보보안 IR 대회 수상',
+    'about.history.2024.item2': 'AI 안전 관제 및 제조 자동화 고도화',
+    'about.history.2025.item1': '하노버 메세 2025에서 제조 AI 기술 발표',
+    'about.history.2025.item2': '3D 공정 설계 및 시뮬레이션 역량 확대',
+    'about.history.2026.item1': '산업용 3D 및 디지털 트윈 제품군 확장',
+    'about.history.2026.item2': '12.30. TWIN R-AX 별도 플랫폼 출시 예정',
 
     // Technologies
     'technologies.title': '주요 기술',
@@ -389,13 +401,27 @@ export const translations: Record<'ko' | 'en', Record<TranslationKey, string>> =
       "Integrate HIKROBOT mobile robots, magnetic grippers, MoonLifter and custom fixtures for transfer, handling, inspection and stacking.",
     'about.values.title': 'Core Values',
     'about.history.title': 'History',
-    'about.history.2021.item1': '02. Research Institute Establishment',
-    'about.history.2021.item2': '03. Gyeongsangnam-do Startup Demo IR Competition Award',
+    'about.history.2021.item1':
+      'Feb. 4 · RoboticBox established as a research-based company',
+    'about.history.2021.item2':
+      'Mar. · Awarded at the Gyeongsangnam-do Startup Demo IR Competition',
     'about.history.2021.item3':
-      '07. Korea Electrotechnology Research Institute Technology Transfer Completed',
-    'about.history.2022.item1': "06. Manufacturing Big Data Collection Gateway 'R-GATE' Launch",
-    'about.history.2022.item2': "09. AI Edge Computing 'R-BOX' Launch",
-    'about.history.2024.item1': '11. Gyeongsangnam-do Information Security IR Competition Award',
+      'Jul. · Technology transfer completed with KERI',
+    'about.history.2022.item1': "Jun. · Launched R-GATE, an industrial data gateway",
+    'about.history.2022.item2': "Sep. · Launched R-BOX, an AI edge-computing device",
+    'about.history.2023.item1':
+      'Expanded applied development across industrial AI, equipment data, and manufacturing automation',
+    'about.history.2024.item1':
+      'Nov. · Awarded at the Gyeongsangnam-do Information Security IR Competition',
+    'about.history.2024.item2':
+      'Advanced AI safety monitoring and manufacturing automation',
+    'about.history.2025.item1':
+      'Presented manufacturing AI technology at HANNOVER MESSE 2025',
+    'about.history.2025.item2':
+      'Expanded 3D process design and simulation capabilities',
+    'about.history.2026.item1': 'Expanded into industrial 3D and digital twin products',
+    'about.history.2026.item2':
+      'Dec. 30 · TWIN R-AX scheduled to launch as a separate platform',
 
     // Technologies
     'technologies.title': 'Technologies',

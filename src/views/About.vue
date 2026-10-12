@@ -162,20 +162,13 @@ const { t, currentLanguage } = useTranslation()
 const areas = computed(() => businessAreas(currentLanguage.value === 'ko').map(area => ({
   ...area, link: '/technologies/' + (area.id === 'twin' ? 'twin-r-ax' : ['logistics', 'handling'].includes(area.id) ? 'automation' : area.id),
 })))
-const history = computed(() => currentLanguage.value === 'ko' ? [
-  { year: '2021', title: '2월 4일 · 연구소기업 로보틱박스 설립', events: ['3월 · 경상남도 스타트업 데모 IR 경진대회 수상', '7월 · 한국전기연구원(KERI) 기술이전 완료'] },
-  { year: '2022', title: '6월 · 산업용 데이터 게이트웨이 R-GATE 출시', events: ['9월 · AI 엣지 컴퓨팅 디바이스 R-BOX 출시'] },
-  { year: '2023', title: '산업 AI, 설비 데이터 및 제조 자동화 분야의 응용 개발 확대', events: [] },
-  { year: '2024', title: '11월 · 경상남도 정보보안 IR 경진대회 수상', events: ['AI 안전관제 및 제조 자동화 기술 고도화'] },
-  { year: '2025', title: 'HANNOVER MESSE 2025에서 제조 AI 기술 공개', events: ['3D 공장 설계 및 시뮬레이션 역량 확대'] },
-  { year: '2026', title: '산업용 3D 및 디지털 트윈 제품 영역으로 사업 확대', events: [], planned: '12월 30일 · TWIN R-AX 독립 플랫폼 출시 예정' },
-] : [
-  { year: '2021', title: 'February 4 · RoboticBox established as a research institute company', events: ['March · Award at the Gyeongnam Startup Demo IR Competition', 'July · Technology transfer from KERI completed'] },
-  { year: '2022', title: 'June · R-GATE industrial data gateway launched', events: ['September · R-BOX AI edge computing device launched'] },
-  { year: '2023', title: 'Expanded application development in industrial AI, equipment data and manufacturing automation', events: [] },
-  { year: '2024', title: 'November · Award at the Gyeongnam Information Security IR Competition', events: ['Advanced AI safety monitoring and manufacturing automation technologies'] },
-  { year: '2025', title: 'Manufacturing AI technology presented at HANNOVER MESSE 2025', events: ['Expanded 3D factory design and simulation capabilities'] },
-  { year: '2026', title: 'Business expanded into industrial 3D and digital twin products', events: [], planned: 'December 30 · Planned launch of the standalone TWIN R-AX platform' },
+const history = computed(() => [
+  { year: '2021', title: t('about.history.2021.item1'), events: [t('about.history.2021.item2'), t('about.history.2021.item3')] },
+  { year: '2022', title: t('about.history.2022.item1'), events: [t('about.history.2022.item2')] },
+  { year: '2023', title: t('about.history.2023.item1'), events: [] },
+  { year: '2024', title: t('about.history.2024.item1'), events: [t('about.history.2024.item2')] },
+  { year: '2025', title: t('about.history.2025.item1'), events: [t('about.history.2025.item2')] },
+  { year: '2026', title: t('about.history.2026.item1'), events: [], planned: t('about.history.2026.item2') },
 ])
 const valuesImage = computed(() => {
   return currentLanguage.value === 'en' ? valuesEn : valuesKo
