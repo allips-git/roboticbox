@@ -3,11 +3,11 @@
     <section
       class="w-full relative overflow-hidden max-h-[22rem] sm:max-h-[30rem] lg:max-h-[40rem] xl:max-h-[48rem] h-screen"
     >
-      <div class="absolute inset-0 w-full">
-        <div class="absolute left-0 z-10 w-full h-full gra-back-row"></div>
+      <div class="absolute inset-0 w-full bg-[#0d0f18]">
+        <div class="absolute inset-0 z-10 hero-navy-overlay"></div>
         <img
-          src="@/assets/img/main_back.png"
-          class="translate-x-[20%] w-full z-10 h-full object-cover"
+          src="@/assets/img/hero-manufacturing.png"
+          class="hero-artwork"
           alt=""
         />
       </div>
@@ -48,60 +48,23 @@
         {{ t('home.about.button') }}<span class="ml-2">></span>
       </router-link>
 
-      <swiper ref="swiperRef" v-bind="swiperOptions" class="mt-8 sm:mt-10 lg:mt-12">
-        <swiper-slide>
+      <swiper v-bind="swiperOptions" @swiper="onSwiper" class="mt-8 sm:mt-10 lg:mt-12" :aria-label="currentLanguage === 'ko' ? '주요 솔루션' : 'Our solutions'">
+        <swiper-slide v-for="slide in carouselSlides" :key="slide.id">
           <div class="swiper_container">
             <div class="swiper_contents gra-back-row">
-              <h4 class="w-full text-xl font-bold text-sky-300 sm:text-2xl lg:text-3xl">
-                {{ t('home.slider.aiSafety') }}
-              </h4>
-              <p
-                class="mt-2 text-sm text-white sm:mt-4 lg:mt-4 sm:text-base lg:text-lg"
-                v-html="t('home.slider.aiSafetyDesc')"
-              ></p>
+              <h4 class="w-full text-xl font-bold text-sky-300 sm:text-2xl lg:text-3xl">{{ slide.title }}</h4>
+              <p class="mt-2 text-sm text-white sm:mt-4 lg:mt-4 sm:text-base lg:text-lg break-keep">{{ slide.description }}</p>
             </div>
             <div class="swiper-dim">
               <div class="w-40 h-40"></div>
-              <img src="@/assets/img/banner_03.png" class="slide-image aspect-[4/3] rounded-sm" />
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="swiper_container">
-            <div class="swiper_contents gra-back-row">
-              <h4 class="w-full text-xl font-bold text-sky-300 sm:text-2xl lg:text-3xl">
-                {{ t('home.slider.plcDevice') }}
-              </h4>
-              <p
-                class="mt-2 text-sm text-white sm:mt-4 lg:mt-4 sm:text-base lg:text-lg"
-                v-html="t('home.slider.plcDeviceDesc')"
-              ></p>
-            </div>
-            <div class="swiper-dim">
-              <div class="absolute inset-0 bg-[#0D0F18] opacity-40 z-10 h-full"></div>
-              <div class="w-40 h-40"></div>
-              <img src="@/assets/img/banner_01.png" class="slide-image aspect-[5/3] rounded-sm" />
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="swiper_container">
-            <div class="swiper_contents gra-back-row">
-              <h4 class="w-full text-xl font-bold text-sky-300 sm:text-2xl lg:text-3xl">
-                {{ t('home.slider.smartLogistics') }}
-              </h4>
-              <p
-                class="mt-2 text-sm text-white sm:mt-4 lg:mt-4 sm:text-base lg:text-lg"
-                v-html="t('home.slider.smartLogisticsDesc')"
-              ></p>
-            </div>
-            <div class="swiper-dim">
-              <div class="w-40 h-40"></div>
-              <img src="@/assets/img/banner_02.png" class="slide-image aspect-[4/3] rounded-sm" />
+              <img :src="slide.image" :alt="slide.alt" class="slide-image aspect-[4/3] rounded-sm" />
             </div>
           </div>
         </swiper-slide>
       </swiper>
+      <button type="button" class="mt-5 px-4 py-2 text-sm text-sky-200 border border-sky-200/50 rounded-sm" :aria-pressed="isPaused" @click="toggleAutoplay">
+        {{ currentLanguage === 'ko' ? (isPaused ? '자동 재생' : '일시정지') : (isPaused ? 'Play slideshow' : 'Pause slideshow') }}
+      </button>
     </section>
     <div class="relative w-full">
       <div class="triangle absolute z-[100]"></div>
@@ -119,76 +82,80 @@
           {{ t('home.technologies.title') }}
         </h2>
         <h3 class="mt-6 text-lg font-bold text-center md:mt-8 md:text-xl lg:text-2xl break-keep">
-          {{ t('home.technologies.heading') }}
+          {{ currentLanguage === 'ko' ? '로봇을 움직이고, 데이터를 연결하고, 현장을 살피는 기술' : 'Technology that moves robots, connects data and monitors operations' }}
         </h3>
-        <p class="mt-3 text-center text-gray-400 lg:mt-4 break-keep">
-          {{ t('home.technologies.description') }}
+        <p class="mt-3 text-center text-slate-600 lg:mt-4 break-keep">
+          {{ currentLanguage === 'ko' ? '로봇·설비의 실행제어부터 제조데이터 연계와 안전 모니터링까지, 실제 현장에서 작동하는 시스템을 만듭니다.' : 'We build systems for real factory floors—from robot and equipment execution control to manufacturing data integration and safety monitoring.' }}
         </p>
-        <!-- <div class="relative mt-4">
-          <div class="text-[12vw] lg:text-[8rem] font-black text-center text-gray-200 roboto">
-            TECHNOLOGIES
-          </div>
-          <ul class="grid relative -top-[8.5vw] -mb-[5vw] lg:-mb-[4rem] lg:-top-[5.75rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            <li
-              v-for="(item, index) in items"
-              :key="index"
-              class="px-4 py-6 text-center bg-white rounded-md border border-gray-100 shadow-sm sm:py-7"
-            >
-              <div class="flex justify-center">
-                <img :src="item.image" alt="" class="h-[3.5rem] lg:h-[4.375rem] mb-3 lg:mb-5">
-              </div>
-              <p class="font-bold text-lg lg:text-xl leading-[1.4] mb-1.5 lg:mb-2 text-[#1483DF]" v-html="item.title"></p>
-              <p class="text-sm break-keep" v-html="item.description"></p>
+        <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <article v-for="(item, index) in technicalCapabilities" :key="item.title" class="rounded-md border border-slate-200 bg-white p-6 lg:p-7">
+            <div class="mb-6 flex items-center justify-between">
+              <span :class="['pi', item.icon, 'text-2xl text-sky-500']" aria-hidden="true"></span>
+              <span class="text-sm font-bold tracking-widest text-slate-400">0{{ index + 1 }}</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">{{ item.title }}</h4>
+            <p class="mt-3 text-sm leading-7 text-slate-600 break-keep">{{ item.description }}</p>
+            <p class="mt-5 border-t border-slate-100 pt-4 text-xs font-semibold leading-6 text-sky-700">{{ item.tags }}</p>
+          </article>
+        </div>
+        <div class="mt-8 flex flex-col gap-5 rounded-md border border-slate-200 px-6 py-5 md:flex-row md:items-center md:justify-between">
+          <p class="font-bold text-slate-800">{{ currentLanguage === 'ko' ? '현장에 맞게 연결하고, 실제 운영까지' : 'From on-site integration to daily operations' }}</p>
+          <ol class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-600">
+            <li v-for="(step, index) in technicalSteps" :key="step" class="flex items-center gap-4">
+              <span v-if="index" aria-hidden="true" class="text-sky-500">→</span>{{ step }}
             </li>
-          </ul>
-        </div> -->
-      </div>
-    </section>
-
-    <section class="relative pb-[4rem] lg:pb-0 w-full">
-      <img
-        src="/src/assets/img/index_mock.png"
-        alt=""
-        class="object-cover lg:max-w-[800px] relative z-0 w-full max-h-[25rem] md:max-h-[32rem] lg:h-[36rem] lg:max-h-[36rem] xl:h-[40rem] xl:max-h-[40rem]"
-      />
-      <div
-        class="relative lg:absolute inset-0 z-10 -mt-[20rem] pt-[12rem] lg:mt-0 lg:pt-0 w-full lg:h-[40rem] white-gra-col-to-b"
-      >
-        <div class="flex justify-center items-center w-full h-full inner">
-          <div class="lg:pl-[24vw] xl:pl-[18rem]">
-            <h2 class="text-2xl font-extrabold text-sky-400 md:text-3xl lg:text-4xl roboto">
-              {{ t('home.solution.title') }}
-            </h2>
-            <h3
-              class="mt-6 text-2xl font-extrabold md:mt-8 md:text-3xl lg:text-4xl"
-              v-html="t('home.solution.heading')"
-            ></h3>
-            <p class="mt-4 lg:mt-6 xl:mt-8 break-keep">
-              {{ t('home.solution.description') }}
-            </p>
-            <router-link
-              to="/technologies"
-              class="border border-gray-900 rounded-sm mt-6 lg:mt-12 xl:mt-16 flex-none w-[120px] text-gray-900 py-3 flex items-center justify-center"
-            >
-              {{ t('home.solution.button') }}<span class="ml-2">&gt;</span>
-            </router-link>
-          </div>
+          </ol>
         </div>
       </div>
     </section>
+
+    <KeySolutions />
   </main>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
+import { ref, shallowRef, computed } from 'vue'
+import { businessAreas } from '@/content/businessAreas'
+import KeySolutions from '@/components/KeySolutions.vue'
+import type { Swiper as SwiperInstance } from 'swiper'
+import { useCompanyContent } from '@/content/company'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/swiper-bundle.css'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Autoplay, A11y } from 'swiper/modules'
 import { useTranslation } from '@/composables/useTranslation'
 
-const { t } = useTranslation()
-const swiperRef = ref(null) // Swiper 참조
-const modules = [Navigation] // 사용할 모듈 배열에 추가
+const { t, currentLanguage } = useTranslation()
+const technicalCapabilities = computed(() => currentLanguage.value === 'ko' ? [
+  { icon: 'pi-cog', title: '로봇·설비 실행제어', description: '휴머노이드와 산업용 로봇의 작업 명령을 설비 신호와 연결합니다. PLC·비전·센서를 통합해 현장 조건에 맞는 작업 실행을 지원합니다.', tags: '로봇 인터페이스 · PLC · 작업셀 연동' },
+  { icon: 'pi-database', title: '제조데이터 연결', description: '설비 상태와 생산데이터를 수집하고 MES·데이터베이스와 연계합니다. 흩어진 현장 정보를 모니터링과 운영에 활용합니다.', tags: '설비 데이터 · MES 연계 · 데이터 흐름' },
+  { icon: 'pi-desktop', title: '3D 현장 모니터링', description: '공장과 설비를 3D 환경으로 구성하고 실제 운영데이터를 연결합니다. 작업 상태와 대기·오류·복구 이력을 함께 확인합니다.', tags: '3D 공장 구성 · 상태 시각화 · 운영 이력' },
+  { icon: 'pi-eye', title: 'AI 비전·안전 모니터링', description: '천장 CCTV와 AprilTag로 지게차를 식별하고 운전자에게 주변 탑뷰를 제공합니다. 현장 영상으로 작업 공간의 상황을 확인합니다.', tags: '영상 인식 · AprilTag · 운전자 탑뷰' },
+] : [
+  { icon: 'pi-cog', title: 'Robot & equipment control', description: 'Connect humanoid and industrial robot commands with equipment signals. Integrate PLCs, vision and sensors for execution under on-site conditions.', tags: 'Robot interfaces · PLCs · Workcell integration' },
+  { icon: 'pi-database', title: 'Manufacturing data', description: 'Collect equipment states and production data, then connect MES and databases to support monitoring and operations.', tags: 'Equipment data · MES integration · Data flows' },
+  { icon: 'pi-desktop', title: '3D factory monitoring', description: 'Build 3D factory and equipment environments connected to operating data. View task states, waiting, errors and recovery history.', tags: '3D environments · Status views · Operating history' },
+  { icon: 'pi-eye', title: 'AI vision & safety', description: 'Identify forklifts using overhead CCTV and AprilTag markers, providing drivers with a top view of their surroundings.', tags: 'Vision · AprilTag · Driver top view' },
+])
+const technicalSteps = computed(() => currentLanguage.value === 'ko'
+  ? ['현장 요구 분석', '시스템 연동', '설치·시운전', '운영 지원']
+  : ['Site assessment', 'Integration', 'Commissioning', 'Operational support'])
+const modules = [Navigation, Autoplay, A11y]
+const swiperInstance = shallowRef<SwiperInstance>()
+const isPaused = ref(false)
+const company = useCompanyContent()
+const onSwiper = (swiper: SwiperInstance) => {
+  swiperInstance.value = swiper
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    isPaused.value = true
+    swiper.autoplay.stop()
+  }
+}
+const toggleAutoplay = () => {
+  isPaused.value = !isPaused.value
+  if (isPaused.value) swiperInstance.value?.autoplay.stop()
+  else swiperInstance.value?.autoplay.start()
+}
+const carouselSlides = computed(() => businessAreas(currentLanguage.value === 'ko'))
 
 import indexList01 from '@/assets/img/index_list_01.png'
 import indexList02 from '@/assets/img/index_list_02.png'
@@ -238,38 +205,12 @@ const scrollToSection = () => {
   }
 }
 
-// 다음 슬라이드로 이동
-const goToNextSlide = (): void => {
-  if (swiperRef.value?.swiper) {
-    swiperRef.value.swiper.slideNext()
-    console.log('다음 슬라이드로 이동')
-  } else {
-    console.log('Swiper 인스턴스가 없습니다.')
-  }
-}
-
-// 이전 슬라이드로 이동
-const goToPrevSlide = (): void => {
-  if (swiperRef.value?.swiper) {
-    swiperRef.value.swiper.slidePrev()
-    console.log('이전 슬라이드로 이동')
-  } else {
-    console.log('Swiper 인스턴스가 없습니다.')
-  }
-}
-
-// 컴포넌트 마운트 후 Swiper 인스턴스 확인
-onMounted(() => {
-  if (swiperRef.value) {
-    console.log('Swiper instance:', swiperRef.value.swiper)
-  } else {
-    console.log('Swiper 컴포넌트가 아직 렌더링되지 않았습니다.')
-  }
-})
-
 const swiperOptions = {
   slidesPerView: 1.8,
-  initialSlide: 1,
+  initialSlide: 0,
+  loop: true,
+  speed: 700,
+  autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
   centeredSlides: true,
   spaceBetween: 60,
   navigation: true,
@@ -283,6 +224,28 @@ const swiperOptions = {
 </script>
 
 <style lang="scss">
+.hero-artwork {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+}
+@media (min-width: 1024px) {
+  .hero-artwork {
+    width: 90%;
+    height: 88%;
+    right: -5%;
+    top: 6%;
+    object-position: center;
+    mask-image: linear-gradient(to right, transparent, black 12%), linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    mask-composite: intersect;
+  }
+}
+/* Keep the hero artwork subdued without affecting carousel images. */
+.hero-navy-overlay {
+  background: linear-gradient(90deg, rgba(8, 15, 30, .88) 0%, rgba(8, 18, 38, .68) 42%, rgba(9, 22, 45, .46) 72%, rgba(8, 18, 38, .5) 100%);
+}
 .gra-back-row {
   background: linear-gradient(-90deg, rgba(13, 15, 24, 0) 0%, rgba(13, 15, 24, 1) 60%);
 }

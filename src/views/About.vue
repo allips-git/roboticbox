@@ -21,7 +21,7 @@
           {{ t('about.overview.title') }}
         </h2>
         <div class="flex flex-col gap-6 lg:justify-between lg:flex-row">
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-4 lg:w-[55%]">
             <p class="text-lg font-bold sm:text-[1.1875rem] md:text-xl xl:text-2xl text-blue-950">
               {{ t('about.overview.heading') }}
             </p>
@@ -33,7 +33,7 @@
             </p>
           </div>
           <div
-            class="flex flex-col gap-2 lg:gap-3 xl:gap-4 [&_dl]:flex [&_dl]:text-sm xl:[&_dl]:text-[0.9375rem] [&_dt]:shrink-0 [&_dt]:w-20 [&_dd]:flex-1 mb-2 lg:mb-0"
+            class="flex flex-col gap-2 lg:gap-3 xl:gap-4 [&_dl]:flex [&_dl]:text-sm xl:[&_dl]:text-[0.9375rem] lg:w-[40%] [&_dt]:shrink-0 [&_dt]:w-20 [&_dd]:flex-1 mb-2 lg:mb-0"
           >
             <dl>
               <dt>{{ t('about.overview.label.companyName') }}</dt>
@@ -49,14 +49,15 @@
             </dl>
             <dl>
               <dt>{{ t('about.overview.label.contact') }}</dt>
-              <dd>{{ t('about.overview.contact') }}</dd>
+              <dd><a href="mailto:mail@rbtbox.kr" class="hover:text-sky-600">mail@rbtbox.kr</a></dd>
             </dl>
             <dl>
-              <dt>{{ t('about.overview.label.address') }}</dt>
+              <dt>{{ company.headquarters }}</dt>
               <dd>
-                {{ t('about.overview.address') }}
+                {{ company.address }}
               </dd>
             </dl>
+            <dl><dt>{{ company.branch }}</dt><dd>{{ company.busan }}</dd></dl>
             <dl>
               <dt>{{ t('about.overview.label.specialty') }}</dt>
               <dd>{{ t('about.overview.specialty') }}</dd>
@@ -80,60 +81,19 @@
         <p class="text-lg font-bold sm:text-[1.1875rem] md:text-xl xl:text-2xl text-blue-950">
           {{ t('about.business.heading') }}
         </p>
-        <ul class="grid grid-cols-1 gap-10 pb-6 mt-6 lg:grid-cols-3 lg:gap-6">
-          <li class="relative">
-            <div class="relative z-0">
-              <div class="absolute top-0 right-0 bottom-0 left-0 white-gra-col"></div>
-              <img
-                src="/src/assets/img/banner_01.png"
-                class="w-full aspect-[3/4] max-h-[300px] object-cover"
-                alt="상용 PLC 및 로봇암 관리 엣지 디바이스"
-              />
-            </div>
-            <div class="relative px-4 -mt-12 z-1">
-              <h3 class="text-xl xl:text-[1.375rem] font-bold break-keep">
-                {{ t('about.business.item1.title') }}
-              </h3>
-              <p class="mt-2 text-sm md:text-[0.9375rem] xl:text-base">
-                {{ t('about.business.item1.desc') }}
-              </p>
-            </div>
-          </li>
-          <li class="relative">
-            <div class="relative z-0">
-              <div class="absolute top-0 right-0 bottom-0 left-0 white-gra-col"></div>
-              <img
-                src="/src/assets/img/banner_02.png"
-                class="w-full aspect-[3/4] max-h-[300px] object-cover"
-                alt="AI 기반 안전 관제 솔루션"
-              />
-            </div>
-            <div class="relative px-4 -mt-12 z-1">
-              <h3 class="text-xl xl:text-[1.375rem] font-bold break-keep">
-                {{ t('about.business.item2.title') }}
-              </h3>
-              <p class="mt-2 text-sm md:text-[0.9375rem] xl:text-base">
-                {{ t('about.business.item2.desc') }}
-              </p>
-            </div>
-          </li>
-          <li class="relative">
-            <div class="relative z-0">
-              <div class="absolute top-0 right-0 bottom-0 left-0 white-gra-col"></div>
-              <img
-                src="/src/assets/img/banner_03.png"
-                class="w-full aspect-[3/4] max-h-[300px] object-cover"
-                alt="스마트 물류 이송 공정 구축"
-              />
-            </div>
-            <div class="relative px-4 -mt-12 z-1">
-              <h3 class="text-xl xl:text-[1.375rem] font-bold break-keep">
-                {{ t('about.business.item3.title') }}
-              </h3>
-              <p class="mt-2 text-sm md:text-[0.9375rem] xl:text-base">
-                {{ t('about.business.item3.desc') }}
-              </p>
-            </div>
+        <ul class="grid grid-cols-1 gap-10 pb-6 mt-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          <li v-for="area in areas" :key="area.id" class="relative">
+            <router-link :to="area.link" class="block h-full rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-500">
+              <div class="relative z-0">
+                <div class="absolute inset-0 white-gra-col"></div>
+                <img :src="area.image" class="w-full aspect-[3/4] max-h-[300px] object-cover" :alt="area.alt" loading="lazy" />
+              </div>
+              <div class="relative px-4 -mt-12 z-1 pb-5">
+                <h3 class="text-xl xl:text-[1.375rem] font-bold break-keep">{{ area.title }}</h3>
+                <p class="mt-2 text-sm md:text-[0.9375rem] xl:text-base">{{ area.description }}</p>
+                <span class="mt-4 inline-block text-sm font-bold text-sky-700">{{ company.more }} →</span>
+              </div>
+            </router-link>
           </li>
         </ul>
       </div>
@@ -167,35 +127,17 @@
         <div
           class="flex relative flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 pt-2 sm:pt-1 [&_h3]:w-[5.5rem] sm:[&_h3]:w-[8rem] md:[&_h3]:w-[10rem] lg:[&_h3]:w-[12rem] xl:[&_h3]:w-[15rem] [&_h3]:text-[1rem] sm:[&_h3]:text-xl md:[&_h3]:text-2xl lg:[&_h3]:text-3xl [&_h3]:shrink-0 [&_h3]:font-black [&_h3]:text-blue-900 [&_ul]:flex-1 [&_ul]:space-y-1 sm:[&_ul]:space-y-2 lg:[&_ul]:space-y-3 [&_ul]:font-medium [&_ul]:text-sm sm:[&_ul]:text-[0.9375rem] md:[&_ul]:text-base lg:[&_ul]:text-[1.0625rem] [&_ul]:pt-0.5 sm:[&_ul]:pt-1"
         >
-          <div class="flex relative">
-            <h3>2021'</h3>
+          <div v-for="entry in history" :key="entry.year" class="flex relative">
+            <h3>{{ entry.year }}</h3>
             <ul>
-              <li>{{ t('about.history.2021.item1') }}</li>
-              <li>{{ t('about.history.2021.item2') }}</li>
-              <li>{{ t('about.history.2021.item3') }}</li>
+              <li class="font-bold text-blue-950">{{ entry.title }}</li>
+              <li v-for="event in entry.events" :key="event" class="text-slate-600">{{ event }}</li>
+              <li v-if="entry.planned" class="text-slate-600">
+                {{ entry.planned }}
+                <span class="ml-2 inline-block rounded border border-sky-200 bg-sky-50 px-2 py-0.5 text-xs font-bold text-sky-700">{{ currentLanguage === 'ko' ? '예정' : 'Planned' }}</span>
+              </li>
             </ul>
-            <div
-              class="absolute top-1 sm:top-[0.375rem] md:top-[0.5rem] lg:top-[0.5rem] xl:top-[0.5rem] left-[4rem] sm:left-[5.5rem] md:left-[6.5rem] lg:left-[8.5rem] xl:left-[10rem] size-4 border-[3px] rounded-full border-gray-500 bg-white"
-            ></div>
-          </div>
-          <div class="flex relative">
-            <h3>2022'</h3>
-            <ul>
-              <li>{{ t('about.history.2022.item1') }}</li>
-              <li>{{ t('about.history.2022.item2') }}</li>
-            </ul>
-            <div
-              class="absolute top-1 sm:top-[0.375rem] md:top-[0.5rem] lg:top-[0.5rem] xl:top-[0.5rem] left-[4rem] sm:left-[5.5rem] md:left-[6.5rem] lg:left-[8.5rem] xl:left-[10rem] size-4 border-[3px] rounded-full border-gray-500 bg-white"
-            ></div>
-          </div>
-          <div class="flex relative">
-            <h3>2024'</h3>
-            <ul>
-              <li>{{ t('about.history.2024.item1') }}</li>
-            </ul>
-            <div
-              class="absolute top-1 sm:top-[0.375rem] md:top-[0.5rem] lg:top-[0.5rem] xl:top-[0.5rem] left-[4rem] sm:left-[5.5rem] md:left-[6.5rem] lg:left-[8.5rem] xl:left-[10rem] size-4 border-[3px] rounded-full border-gray-500 bg-white"
-            ></div>
+            <div class="absolute top-1 sm:top-[0.375rem] md:top-[0.5rem] left-[4rem] sm:left-[5.5rem] md:left-[6.5rem] lg:left-[8.5rem] xl:left-[10rem] size-4 border-[3px] rounded-full border-gray-500 bg-white"></div>
           </div>
           <div
             class="absolute h-[calc(100%-28px)] w-0.5 bg-gray-500 -z-10 left-[4.4375rem] sm:left-[5.9375rem] md:left-[6.9375rem] lg:left-[8.9375rem] xl:left-[10.4375rem] bottom-3"
@@ -208,12 +150,33 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
+import { businessAreas } from '@/content/businessAreas'
+import { useCompanyContent } from '@/content/company'
+const company = useCompanyContent()
 import { useTranslation } from '@/composables/useTranslation'
 import valuesKo from '@/assets/img/values.png'
 import valuesEn from '@/assets/img/values_en.png'
 
 const { t, currentLanguage } = useTranslation()
 
+const areas = computed(() => businessAreas(currentLanguage.value === 'ko').map(area => ({
+  ...area, link: '/technologies/' + (area.id === 'twin' ? 'twin-r-ax' : ['logistics', 'handling'].includes(area.id) ? 'automation' : area.id),
+})))
+const history = computed(() => currentLanguage.value === 'ko' ? [
+  { year: '2021', title: '2월 4일 · 연구소기업 로보틱박스 설립', events: ['3월 · 경상남도 스타트업 데모 IR 경진대회 수상', '7월 · 한국전기연구원(KERI) 기술이전 완료'] },
+  { year: '2022', title: '6월 · 산업용 데이터 게이트웨이 R-GATE 출시', events: ['9월 · AI 엣지 컴퓨팅 디바이스 R-BOX 출시'] },
+  { year: '2023', title: '산업 AI, 설비 데이터 및 제조 자동화 분야의 응용 개발 확대', events: [] },
+  { year: '2024', title: '11월 · 경상남도 정보보안 IR 경진대회 수상', events: ['AI 안전관제 및 제조 자동화 기술 고도화'] },
+  { year: '2025', title: 'HANNOVER MESSE 2025에서 제조 AI 기술 공개', events: ['3D 공장 설계 및 시뮬레이션 역량 확대'] },
+  { year: '2026', title: '산업용 3D 및 디지털 트윈 제품 영역으로 사업 확대', events: [], planned: '12월 30일 · TWIN R-AX 독립 플랫폼 출시 예정' },
+] : [
+  { year: '2021', title: 'February 4 · RoboticBox established as a research institute company', events: ['March · Award at the Gyeongnam Startup Demo IR Competition', 'July · Technology transfer from KERI completed'] },
+  { year: '2022', title: 'June · R-GATE industrial data gateway launched', events: ['September · R-BOX AI edge computing device launched'] },
+  { year: '2023', title: 'Expanded application development in industrial AI, equipment data and manufacturing automation', events: [] },
+  { year: '2024', title: 'November · Award at the Gyeongnam Information Security IR Competition', events: ['Advanced AI safety monitoring and manufacturing automation technologies'] },
+  { year: '2025', title: 'Manufacturing AI technology presented at HANNOVER MESSE 2025', events: ['Expanded 3D factory design and simulation capabilities'] },
+  { year: '2026', title: 'Business expanded into industrial 3D and digital twin products', events: [], planned: 'December 30 · Planned launch of the standalone TWIN R-AX platform' },
+])
 const valuesImage = computed(() => {
   return currentLanguage.value === 'en' ? valuesEn : valuesKo
 })

@@ -5,7 +5,7 @@
     >
       <h1>
         <router-link to="/">
-          <img src="@/assets/img/logo.png" alt="주식회사 로보틱박스" class="w-[7rem] sm:w-[9rem]" />
+          <img src="@/assets/img/logo-color.png" alt="주식회사 로보틱박스" class="w-[10rem] sm:w-[11rem] h-auto max-w-none" />
         </router-link>
       </h1>
       <div

@@ -1,0 +1,29 @@
+{
+  "tool": "Built-in image_gen",
+  "prompts": [
+    {
+      "id": "twin",
+      "prompt": "Use case: ads-marketing. Create a brand-new standalone image for a Korean industrial technology company website carousel. Landscape 4:3 composition. Premium photorealistic industrial visualization, charcoal navy and steel blue, restrained cyan accents, realistic engineered machinery, sophisticated clean factory, believable details. Main subjects concentrated in center-right, left third calm dark negative space for website text overlay. No words, letters, logos, watermark, labels or collage. Medium subdued lighting, subjects clearly readable. A manufacturing digital twin: elevated three-quarter view of a detailed compact factory floor with machines, robot cells and conveyors, physical factory transitioning subtly into a precise translucent blue spatial digital model, restrained data connections between actual machines. Grounded industrial visualization, not floating fantasy buildings."
+    },
+    {
+      "id": "humanoid",
+      "prompt": "Use case: ads-marketing. Create a brand-new standalone image for a Korean industrial technology company website carousel. Landscape 4:3 composition. Premium photorealistic industrial visualization, charcoal navy and steel blue, restrained cyan accents, realistic engineered machinery, sophisticated clean factory, believable details. Main subjects concentrated in center-right, left third calm dark negative space for website text overlay. No words, letters, logos, watermark, labels or collage. Medium subdued lighting, subjects clearly readable. Humanoid robot supervision: two realistic white-and-graphite industrial humanoid robots coordinating parts supply and finished-part collection around a CNC workcell, a control console on the far right displaying a simple abstract spatial factory map and status dots without text. Restrained subtle blue connecting paths show coordinated tasks. Functional hands, plausible anatomy, not battle robots."
+    },
+    {
+      "id": "logistics",
+      "prompt": "Use case: ads-marketing. Create a brand-new standalone image for a Korean industrial technology company website carousel. Landscape 4:3 composition. Premium photorealistic industrial visualization, charcoal navy and steel blue, restrained cyan accents, realistic engineered machinery, sophisticated clean factory, believable details. Main subjects concentrated in center-right, left third calm dark negative space for website text overlay. No words, letters, logos, watermark, labels or collage. Medium subdued lighting, subjects clearly readable. Mobile robot logistics: a low orange autonomous mobile robot transporting a loaded industrial tote rack, and an autonomous forklift moving a pallet in an orderly modern warehouse aisle. Ground-level three-quarter view, clear real wheels and forks, attractive steel-blue warehouse architecture."
+    },
+    {
+      "id": "handling",
+      "prompt": "Use case: ads-marketing. Create a brand-new standalone image for a Korean industrial technology company website carousel. Landscape 4:3 composition. Premium photorealistic industrial visualization, charcoal navy and steel blue, restrained cyan accents, realistic engineered machinery, sophisticated clean factory, believable details. Main subjects concentrated in center-right, left third calm dark negative space for website text overlay. No words, letters, logos, watermark, labels or collage. Medium subdued lighting, subjects clearly readable. Robotic handling and operator assistance: close three-quarter view of an industrial robot arm fitted with a compact magnetic gripper lifting a solid steel billet over a sturdy workstation, overhead suspended electric lifting assist visible in background. Engineered mounting, secure grasp, realistic heavy steel materials, clean industrial photo."
+    },
+    {
+      "id": "automation",
+      "prompt": "Use case: ads-marketing. Create a brand-new standalone image for a Korean industrial technology company website carousel. Landscape 4:3 composition. Premium photorealistic industrial visualization, charcoal navy and steel blue, restrained cyan accents, realistic engineered machinery, sophisticated clean factory, believable details. Main subjects concentrated in center-right, left third calm dark negative space for website text overlay. No words, letters, logos, watermark, labels or collage. Medium subdued lighting, subjects clearly readable. Integrated manufacturing automation: industrial robot arms beside a conveyor production line with machined metal components, a realistic enclosed optical quality inspection station with blue machine-vision light, then orderly stacking and transfer. Strong depth perspective with hero robot at center-right. Practical factory technology."
+    },
+    {
+      "id": "safety",
+      "prompt": "Use case: ads-marketing. Create a brand-new standalone image for a Korean industrial technology company website carousel. Landscape 4:3 composition. Premium photorealistic industrial visualization, charcoal navy and steel blue, restrained cyan accents, realistic engineered machinery, sophisticated clean factory, believable details. Main subjects concentrated in center-right, left third calm dark negative space for website text overlay. No words, letters, logos, watermark, labels or collage. Medium subdued lighting, subjects clearly readable. AI forklift safety monitoring: elevated view of a real warehouse forklift with a small black-and-white square fiducial marker on its roof, overhead CCTV camera visible, and an operator tablet in right foreground showing a textless top-down warehouse view with forklift and pedestrian icons, restrained cyan zones. Worker at safe distance in separate walkway. No camera attached to forklift. Clear recognizable safety scenario."
+    }
+  ]
+}

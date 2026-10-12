@@ -1,71 +1,72 @@
 /**
  * @description 문의하기 관련 pinia
  */
-import { defineStore } from 'pinia';
-import emailjs from 'emailjs-com';
+import { defineStore } from 'pinia'
+import emailjs from 'emailjs-com'
 
 interface formData {
-    company : string;
-    name    : string;
-    rank    : string;
-    tel     : string;
-    email   : string;
-    message : string;
+  company: string
+  name: string
+  rank: string
+  tel: string
+  email: string
+  message: string
 }
 
 const getFormData = (): formData => {
-    return {
-        company : '',
-        name    : '',
-        rank    : '',
-        tel     : '',
-        email   : '',
-        message : ''
-    }
+  return {
+    company: '',
+    name: '',
+    rank: '',
+    tel: '',
+    email: '',
+    message: '',
+  }
 }
 
 interface State {
-    serviceId   : string;
-    templateId  : string;
-    checked     : boolean;
-    formData    : formData;
-    msg         : formData;
+  state: boolean
+  serviceId: string
+  templateId: string
+  checked: boolean
+  formData: formData
+  msg: formData
 }
 
 export const useContactStore = defineStore('contact', {
-    state: (): State => ({
-        state       : false,
-        serviceId   : 'service_7u9e0s7',
-        templateId  : 'template_zpwstyr',
-        checked     : false,
-        formData    : getFormData(),
-        msg         : getFormData()
-    }),
-    actions: {
-        async sendEmail()
-        {
-            this.state = true;
-            
-            await emailjs.send(this.serviceId, this.templateId, this.formData, 'tQPnjInLPnn11zPih').then(() => {
-                alert('문의하기가 완료되었습니다.');
-                this.getReset();
-            }).catch((e) => {
-                console.log(e);
-                alert('문의하기에 실패하였습니다. 지속될 경우 관리자에게 문의하세요.');
-            })
+  state: (): State => ({
+    state: false,
+    serviceId: 'service_7u9e0s7',
+    templateId: 'template_zpwstyr',
+    checked: false,
+    formData: getFormData(),
+    msg: getFormData(),
+  }),
+  actions: {
+    async sendEmail() {
+      this.state = true
 
-            this.state = false;
-        },
-        getMsgSet(msg: string, name: string)
-        {
-            this.msg        = getFormData();
-            this.msg[name]  = msg;
-        },
-        getReset()
-        {
-            this.checked    = false;
-            this.formData   = getFormData();
-            this.msg        = getFormData();
-        }
-    }
-});
+      await emailjs
+        .send(this.serviceId, this.templateId, { ...this.formData }, 'tQPnjInLPnn11zPih')
+        .then(() => {
+          alert('문의하기가 완료되었습니다.')
+          this.getReset()
+        })
+        .catch((e) => {
+          console.log(e)
+          alert('문의하기에 실패하였습니다. 지속될 경우 관리자에게 문의하세요.')
+        })
+
+      this.state = false
+    },
+    getMsgSet(msg: string, name: string) {
+      this.msg = getFormData()
+      if (name in this.msg) this.msg[name as keyof formData] = msg
+    },
+    getReset() {
+      this.checked = false
+      this.formData = getFormData()
+      this.msg = getFormData()
+    },
+  },
+})

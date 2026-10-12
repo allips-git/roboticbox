@@ -150,44 +150,44 @@ export const translations: Record<'ko' | 'en', Record<TranslationKey, string>> =
 
     // Home
     'home.hero.title':
-      'AI와 함께 가는 미래, <br> <span class="text-sky-400">로보틱박스</span>가함께합니다.',
+      "AI와 함께 가는 미래, <br> <span class=\"text-sky-400\">로보틱박스</span>가 함께합니다.",
     'home.hero.subtitle': "TOGETHER — LET'S INNOVATE THE FUTURE — WITH AI",
     'home.hero.button': '더보기',
     'home.about.title': 'ABOUT US',
     'home.about.heading':
-      '로보틱박스는 자동화 기계와 데이터·AI 기술을 바탕으로 제조 및 로보틱스 분야에서 혁신적인 솔루션을 제공하는 전문 기업입니다.',
+      "로보틱박스는 AI와 로보틱스 기술을 바탕으로 제조 현장의 생산성과 안전을 높이는 솔루션을 제공합니다.",
     'home.about.description':
-      '(주)로보틱박스는 2021년 설립된 연구소 기업으로, 경남 창원에 본사를 두고 있으며 한국전기연구원과의 합작법인으로 출범하였습니다. 고객의 안전과 효율성을최우선으로 고려하며, 산업 환경에서의 실시간 데이터 분석과 리스크 예측을 통해 생산성 향상 및 안전 강화를 위한 첨단 기술을 개발하고 있습니다.',
+      "2021년 한국전기연구원과 합작 설립된 연구소기업으로, TWIN R-AX 제조 플랫폼, 휴머노이드 관제, 로봇자동화와 AI 안전 관제를 통해 현장을 연결합니다.",
     'home.about.button': '더보기',
     'home.technologies.title': 'TECHNOLOGIES',
     'home.technologies.heading':
       '로보틱박스는 언제나 혁신적인 접근으로 산업 환경의 미래 솔루션을 제공하고 있습니다.',
     'home.technologies.description':
-      '로보틱박스는 AI와 빅데이터 기술을 바탕으로 제조 산업에서 혁신적인 자동화 솔루션을 제공합니다. 우리는 생산 공정과 원자재 분석에서부터 교통 안전 및 강재특성 예측까지, 데이터를 활용해 더 안전하고 효율적인 환경를 만들기 위해 최적화된 기술로 미래 산업의 새로운 기준을 제시하고 있습니다.',
+      "3D 공장과 설비·생산 데이터를 연결하는 TWIN R-AX부터 휴머노이드 작업 관제, 물류 이송·로봇 핸들링·공정 자동화, AI 안전 관제까지 제조 현장에 맞는 기술을 제공합니다.",
     'home.solution.title': 'KEY SOLUTION',
     'home.solution.heading': '물류 사고 감소를 위한 <br> AI 지게차 안전 관제 솔루션',
     'home.solution.description':
-      '로보틱박스는 AI 지게차 안전 관제 솔루션은 지게차 및 작업자의 움직임을 관측할 수 있는 TopView 관제 시스템을 도입하여 영상 속 지게차와 작업자의 라벨링 및 이동 동선 예측 모델링을 통하여 객체 이동 동선의 사고를 예측하고 태블릿을 통해 지게차 운전자에게 알람을 제공하여 사전에 지게차와 작업자간의 충돌을 예방하는 시스템을 주요 기술로 제공하고 있습니다.',
+      "AprilTag와 천장 CCTV로 지게차를 자동 식별하고 운전자 태블릿에 실시간 주변 탑뷰를 제공합니다. 지게차와 작업자의 위치·동선을 분석해 현장 안전 관리를 지원합니다.",
     'home.solution.button': '더보기',
     'home.slider.aiSafety': 'AI 기반 안전 관제 솔루션',
     'home.slider.aiSafetyDesc':
       '물류 사고를 줄이기 위한 <br>지게차 안전 관제 시스템 등 IOT와 AI 기술을 융합한 안전 관리 솔루션을 제공합니다.',
-    'home.slider.plcDevice': '상용 PLC 및 로봇암 관리 엣지 디바이스',
+    'home.slider.plcDevice': "TWIN R-AX · 휴머노이드 관제",
     'home.slider.plcDeviceDesc':
-      '로봇 및 공정 상태를 실시간으로 관리하는 <br>엣지 디바이스를 개발하여 효율적인 공정 운영을 지원합니다.',
-    'home.slider.smartLogistics': '스마트 물류 이송 공정 구축',
+      "3D 공장과 데이터를 연결하고,<br>로봇의 작업 배분·모니터링·대기·재개를 지원합니다.",
+    'home.slider.smartLogistics': "로봇자동화",
     'home.slider.smartLogisticsDesc':
-      '웹 기반 상태인식 기능을 통해 <br>공정 효율성을 극대화한 스마트 장치를 설계 및 구현합니다.',
+      "모바일 로봇과 로봇 핸들링을 기반으로<br>검사·적재·물류 이송 공정을 통합합니다.",
 
     // About
     'about.title': '회사소개',
     'about.overview.title': '회사 개요',
     'about.overview.heading':
-      '로보틱박스는 자동화 기계와 데이터·AI 기술을 바탕으로 제조 및 로보틱스 분야에서 혁신적인 솔루션을 제공하는 전문 기업입니다.',
+      '로보틱박스는 로봇·설비·데이터를 연결하는 제조 기술 기업입니다.',
     'about.overview.description1':
       '(주)로보틱박스는 2021년 설립된 연구소 기업으로, 경남 창원에 본사를 두고 있으며 한국전기연구원과의 합작법인으로 출범하였습니다.',
     'about.overview.description2':
-      '고객의 안전과 효율성을 최우선으로 고려하며,산업 환경에서의 실시간 데이터 분석과 리스크 예측을 통해 생산성 향상 및 안전 강화를 위한 첨단 기술을 개발하고 있습니다.',
+      '로봇자동화와 제조데이터 연계, 현장 운영·안전 기술을 다룹니다. 작업 환경과 공정 조건을 바탕으로 설비와 시스템을 연결하고, 휴머노이드의 제조현장 연계로 기술 영역을 넓혀가고 있습니다.',
     'about.overview.description3': '',
     'about.overview.label.companyName': '회사명',
     'about.overview.companyName': '(주)로보틱박스',
@@ -199,23 +199,23 @@ export const translations: Record<'ko' | 'en', Record<TranslationKey, string>> =
     'about.overview.contact': '+82-10-2951-0068',
     'about.overview.label.address': '주소',
     'about.overview.address':
-      '경상남도 창원시 성산구 전기의길 10 기술창업센터 102호 (성주동, 한국전기연구원 기술창업센터)',
-    'about.overview.label.specialty': '전문 분야',
-    'about.overview.specialty': '자동차, 전지, 철강',
-    'about.overview.label.process': '전문 공정',
-    'about.overview.process': '품질검사, 인케이싱/포장, 이송',
+      "경상남도 창원시 성산구 불모산로 24번길 19, 창원테크비즈센터 602호",
+    'about.overview.label.specialty': '주요 사업',
+    'about.overview.specialty': '제조 플랫폼, 로보틱스, AI 안전관제',
+    'about.overview.label.process': '적용 분야',
+    'about.overview.process': '물류 이송, 핸들링, 품질검사, 공정 연동',
     'about.business.title': '사업 영역',
     'about.business.heading':
-      '로보틱박스는 로보틱스 및 AI 전문가들로 구성되어 첨단 기술 개발 및 고도화에 주력하고 있습니다.',
-    'about.business.item1.title': '상용 PLC 및 로봇암 관리 엣지 디바이스',
+      '제조현장의 데이터, 로봇, 안전을 연결하는 여섯 가지 사업 영역',
+    'about.business.item1.title': "TWIN R-AX · 휴머노이드 관제",
     'about.business.item1.desc':
-      '로봇 및 공정 상태를 실시간으로 관리하는 엣지 디바이스를 개발하여 효율적인 공정 운영을 지원합니다.',
+      "설비·생산데이터를 연결하고 휴머노이드의 작업 실행·상태 확인·현장 연계를 다룹니다.",
     'about.business.item2.title': 'AI 기반 안전 관제 솔루션',
     'about.business.item2.desc':
       '물류 사고를 줄이기 위한 지게차 안전 관제 시스템 등 IOT와 AI 기술을 융합한 안전 관리 솔루션을 제공합니다.',
-    'about.business.item3.title': '스마트 물류 이송 공정 구축',
+    'about.business.item3.title': "로봇자동화",
     'about.business.item3.desc':
-      '웹 기반 상태인식 기능을 통해 공정 효율성을 극대화한 스마트 장치를 설계 및 구현합니다.',
+      "HIKROBOT 모바일 로봇, 마그네틱 그리퍼, MoonLifter와 맞춤형 지그를 활용해 이송·핸들링·검사·적재 공정을 자동화합니다.",
     'about.values.title': '핵심 가치',
     'about.history.title': '연혁',
     'about.history.2021.item1': '02. 연구소 설립',
@@ -223,7 +223,7 @@ export const translations: Record<'ko' | 'en', Record<TranslationKey, string>> =
     'about.history.2021.item3': '07. 한국전기연구원 기술이전 완료',
     'about.history.2022.item1': "06. 제조빅데이터 포집 게이트 웨이 'R-GATE' 런칭",
     'about.history.2022.item2': "09. AI 엣지 컴퓨팅 'R-BOX' 런칭",
-    'about.history.2024.item1': '06. 경상남도 정보 보안 IR 대회 수상',
+    'about.history.2024.item1': '11. 경상남도 정보보안 IR 경진대회 수상',
 
     // Technologies
     'technologies.title': '주요 기술',
@@ -304,7 +304,7 @@ export const translations: Record<'ko' | 'en', Record<TranslationKey, string>> =
     'footer.contact.mobile': 'Mobile : 010-2951-0068',
     'footer.contact.tel': 'Tel : 051-711-3468',
     'footer.contact.fax': 'Fax : 051-518-8901',
-    'footer.copyright': 'ⓒ 2025. (주)로보틱박스',
+    'footer.copyright': 'ⓒ 2026. (주)로보틱박스',
 
     // Common
     'common.more': '더보기',
@@ -325,40 +325,40 @@ export const translations: Record<'ko' | 'en', Record<TranslationKey, string>> =
     'home.hero.button': 'Learn More',
     'home.about.title': 'ABOUT US',
     'home.about.heading':
-      'RoboticBox is a specialized company providing innovative solutions in manufacturing and robotics based on automation machinery and data·AI technology.',
+      'RoboticBox connects robots, equipment and data for manufacturing.',
     'home.about.description':
-      'RoboticBox Co., Ltd. is a research institute company established in 2021, headquartered in Changwon, Gyeongnam, and launched as a joint venture with the Korea Electrotechnology Research Institute. We prioritize customer safety and efficiency, developing cutting-edge technologies for productivity improvement and safety enhancement through real-time data analysis and risk prediction in industrial environments.',
+      "Founded in 2021 in partnership with the Korea Electrotechnology Research Institute, RoboticBox connects manufacturing operations through TWIN R-AX, humanoid supervision, robot automation and AI safety monitoring.",
     'home.about.button': 'Learn More',
     'home.technologies.title': 'TECHNOLOGIES',
     'home.technologies.heading':
       'RoboticBox always provides future solutions for industrial environments through innovative approaches.',
     'home.technologies.description':
-      'RoboticBox provides innovative automation solutions in the manufacturing industry based on AI and big data technology. From production processes and raw material analysis to traffic safety and steel property prediction, we present new standards for the future industry with optimized technology that utilizes data to create safer and more efficient environments.',
+      "From TWIN R-AX for 3D factories and production data to humanoid task supervision, robotic handling, logistics and AI safety monitoring, we deliver technology for real manufacturing environments.",
     'home.solution.title': 'KEY SOLUTION',
     'home.solution.heading':
       'AI Forklift Safety Monitoring Solution <br> for Reducing Logistics Accidents',
     'home.solution.description':
-      "RoboticBox's AI Forklift Safety Monitoring Solution introduces a TopView monitoring system that can observe the movement of forklifts and workers, predicts accidents in object movement trajectories through labeling and movement trajectory prediction modeling of forklifts and workers in video, and provides alarms to forklift drivers through tablets to prevent collisions between forklifts and workers in advance.",
+      "AprilTags and overhead CCTV identify forklifts and deliver a live top view to operator tablets. Position and movement analysis supports workplace safety management.",
     'home.solution.button': 'Learn More',
     'home.slider.aiSafety': 'AI-based Safety Monitoring Solution',
     'home.slider.aiSafetyDesc':
       'We provide safety management solutions that combine IoT and AI technologies, such as forklift safety monitoring systems to reduce logistics accidents.',
-    'home.slider.plcDevice': 'Commercial PLC and Robot Arm Management Edge Device',
+    'home.slider.plcDevice': "TWIN R-AX & Humanoid Supervision",
     'home.slider.plcDeviceDesc':
-      'We develop edge devices that manage robot and process status in real-time to support efficient process operations.',
-    'home.slider.smartLogistics': 'Smart Logistics Transport Process Construction',
+      "Connect 3D factories and data.<br>Coordinate robot tasks, monitoring, waiting and resumption.",
+    'home.slider.smartLogistics': "Robot Automation",
     'home.slider.smartLogisticsDesc':
-      'We design and implement smart devices that maximize process efficiency through web-based status recognition functions.',
+      "Integrate inspection, stacking and material transfer<br>with mobile robots and robotic handling.",
 
     // About
     'about.title': 'About Us',
     'about.overview.title': 'Company Overview',
     'about.overview.heading':
-      'RoboticBox is a specialized company providing innovative solutions in manufacturing and robotics based on automation machinery and data·AI technology.',
+      'RoboticBox connects robots, equipment and data for manufacturing.',
     'about.overview.description1':
       'RoboticBox Co., Ltd. is a research institute company established in 2021, headquartered in Changwon, Gyeongnam, and launched as a joint venture with the Korea Electrotechnology Research Institute.',
     'about.overview.description2':
-      'We prioritize customer safety and efficiency, developing cutting-edge technologies for productivity improvement and safety enhancement through real-time data analysis and risk prediction in industrial environments.',
+      'We work across robot automation, manufacturing data integration, operations and safety. We connect equipment and systems around site and process conditions, while extending our work into humanoid integration for manufacturing.',
     'about.overview.description3': '',
     'about.overview.label.companyName': 'Company Name',
     'about.overview.companyName': 'RoboticBox Co., Ltd.',
@@ -370,23 +370,23 @@ export const translations: Record<'ko' | 'en', Record<TranslationKey, string>> =
     'about.overview.contact': '+82-10-2951-0068',
     'about.overview.label.address': 'Address',
     'about.overview.address':
-      '102, Technology Startup Center, 10 Jeongi-gil, Seongsan-gu, Changwon-si, Gyeongsangnam-do (Seongju-dong, Korea Electrotechnology Research Institute Technology Startup Center)',
-    'about.overview.label.specialty': 'Specialty',
-    'about.overview.specialty': 'Automotive, Battery, Steel',
-    'about.overview.label.process': 'Process',
-    'about.overview.process': 'Quality Inspection, Encasing/Packaging, Transport',
+      "Room 602, Changwon Tech Biz Center, 19 Bulmosan-ro 24beon-gil, Seongsan-gu, Changwon, Korea",
+    'about.overview.label.specialty': 'Business',
+    'about.overview.specialty': 'Manufacturing platforms, robotics and AI safety',
+    'about.overview.label.process': 'Applications',
+    'about.overview.process': 'Logistics, handling, quality inspection and process integration',
     'about.business.title': 'Business Areas',
     'about.business.heading':
-      'RoboticBox, composed of robotics and AI experts, focuses on developing and advancing cutting-edge technologies.',
-    'about.business.item1.title': 'Commercial PLC and Robot Arm Management Edge Device',
+      'Six business areas connecting manufacturing data, robots and safety',
+    'about.business.item1.title': "TWIN R-AX & Humanoid Supervision",
     'about.business.item1.desc':
-      'We develop edge devices that manage robot and process status in real-time to support efficient process operations.',
+      "Connect equipment and production data, with a focus on humanoid execution, state monitoring and site integration.",
     'about.business.item2.title': 'AI-based Safety Monitoring Solution',
     'about.business.item2.desc':
       'We provide safety management solutions that combine IoT and AI technologies, such as forklift safety monitoring systems to reduce logistics accidents.',
-    'about.business.item3.title': 'Smart Logistics Transport Process Construction',
+    'about.business.item3.title': "Robot Automation",
     'about.business.item3.desc':
-      'We design and implement smart devices that maximize process efficiency through web-based status recognition functions.',
+      "Integrate HIKROBOT mobile robots, magnetic grippers, MoonLifter and custom fixtures for transfer, handling, inspection and stacking.",
     'about.values.title': 'Core Values',
     'about.history.title': 'History',
     'about.history.2021.item1': '02. Research Institute Establishment',
@@ -395,7 +395,7 @@ export const translations: Record<'ko' | 'en', Record<TranslationKey, string>> =
       '07. Korea Electrotechnology Research Institute Technology Transfer Completed',
     'about.history.2022.item1': "06. Manufacturing Big Data Collection Gateway 'R-GATE' Launch",
     'about.history.2022.item2': "09. AI Edge Computing 'R-BOX' Launch",
-    'about.history.2024.item1': '06. Gyeongsangnam-do Information Security IR Competition Award',
+    'about.history.2024.item1': '11. Gyeongsangnam-do Information Security IR Competition Award',
 
     // Technologies
     'technologies.title': 'Technologies',
@@ -482,7 +482,7 @@ export const translations: Record<'ko' | 'en', Record<TranslationKey, string>> =
     'footer.contact.mobile': 'Mobile : 010-2951-0068',
     'footer.contact.tel': 'Tel : 051-711-3468',
     'footer.contact.fax': 'Fax : 051-518-8901',
-    'footer.copyright': 'ⓒ 2025. RoboticBox Co., Ltd.',
+    'footer.copyright': 'ⓒ 2026. RoboticBox Co., Ltd.',
 
     // Common
     'common.more': 'Learn More',
